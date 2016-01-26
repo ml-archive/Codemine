@@ -20,22 +20,20 @@ extension UIColor {
     }
 }
 
-///
 public extension UIImage {
     /**
-    Create an image with customized background color, size and radius of edges.
+        Create an `UIImage` with customized background color, size and radius of corners.
      
-    Parameter `color` is used for the background color, 
-    parameter `size` to set the size of the the holder rectangle,
-    parameter `cornerRadius` for setting up the rounded corners.
-    
+        Parameter `color` is used for the background color,
+        parameter `size` to set the size of the the holder rectangle,
+        parameter `cornerRadius` for setting up the rounded corners.
      
-    - Parameters:
-        - color: Background color as `UIColor`.
-        - size: Size of image as `CGSize`.
-        - cornerRadius: Radius of corners as `CGFloat`.
+        - Parameters:
+            - color: Background color as `UIColor`.
+            - size: Size of image as `CGSize`.
+            - cornerRadius: Radius of corners as `CGFloat`.
      
-    - Returns: A customized `UIImage`.
+        - Returns: A customized `UIImage`.
     */
     public class func imageFromColor(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
         
@@ -64,15 +62,15 @@ public extension UIImage {
     }
     
     /**
-    Embed an icon/image on top of a background image.
+        Embed an icon/image on top of a background image.
     
-    `imageOne` will be the background and `icon` is the image that will be on top of `imageOne`.
-    The `UIImage` that is set with the parameter `icon` will always be centered on `imageOne`.
+        `imageOne` will be the background and `icon` is the image that will be on top of `imageOne`.
+        The `UIImage` that is set with the parameter `icon` will be centered on `imageOne`.
      
-    - Parameters:
-        - imageOne: Background image.
-        - icon: Inner image that will be embedded.
-    - Returns: Combined image as `UIImage`.
+        - Parameters:
+            - imageOne: Background image.
+            - icon: Embedded image that will be on top.
+        - Returns: Combined image as `UIImage`.
     */
     public class func imageByEmbeddingIconIn(imageOne: UIImage, icon: UIImage) -> UIImage {
         let newSize = CGSizeMake(imageOne.size.width, imageOne.size.height)
@@ -80,7 +78,7 @@ public extension UIImage {
         
         imageOne.drawInRect(CGRectMake(0,0,newSize.width,newSize.height))
         
-        // Center icon in holder rectangle
+        // Center icon
         icon.drawInRect(CGRectMake(imageOne.size.width/2 - icon.size.width/2, imageOne.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height), blendMode:CGBlendMode.Normal, alpha:1.0)
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -89,12 +87,25 @@ public extension UIImage {
 }
 
 public extension UIView {
-    
+    /**
+        Assign a `nibName` to a UIView.
+        Later on you can call this `UIView` by its `nibName`.
+     
+        - Parameter nibName: The name that the UIView will get as its `nibName` assigned as a `String`.
+        - Returns: `Generics type`.
+    */
     public static func viewWithNibNamed<T>(nibName:String) -> T {
         let view = UINib(nibName: nibName, bundle: nil).instantiateWithOwner(nil, options: nil).first! as! T
         return view
     }
     
+    /**
+        Rounded corners for a `UIView`.
+     
+        - Parameters:
+            - corners: Defines which corners should be rounded.
+            - radius: Defines the radius of the round corners as a `CGFloat`.
+    */
     public func roundViewCorners(corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
@@ -104,6 +115,7 @@ public extension UIView {
 }
 
 public extension CGRect {
+    /// Getter & Setter for `CGRect` var `y`
     public var y: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(origin.x, newValue), size: size)
@@ -113,6 +125,7 @@ public extension CGRect {
         }
     }
     
+    /// Getter & Setter for `CGRect` var `x`
     public var x: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(newValue, origin.y), size: size)
@@ -122,6 +135,7 @@ public extension CGRect {
         }
     }
     
+    /// Getter & Setter for `CGRect` var `height`
     private var height: CGFloat {
         set {
             self = CGRect(origin: origin, size: CGSize(width: size.width, height: newValue))
@@ -131,6 +145,7 @@ public extension CGRect {
         }
     }
     
+    /// Getter & Setter for `CGRect` var `width`
     private var width: CGFloat {
         set {
             self = CGRect(origin: origin, size: CGSize(width: newValue, height: self.height))
@@ -140,16 +155,29 @@ public extension CGRect {
         }
     }
     
+    /// Reversing width and height of a CGRect
     public func rectByReversingSize() -> CGRect {
         return CGRect(origin: self.origin, size: CGSizeMake(self.height, self.width))
     }
 }
 
+/// Add Operator `+` for two `CGSizes` to summerise both to one `CGSize`.
 public func + (left: CGSize, right: CGSize) -> CGSize {
     return CGSize(width: left.width + right.width, height: left.height + right.height)
 }
 
 public extension CGPoint {
+    /**
+        Check if a `CGPoint` is close to another `CGPoint`.
+        There is a tolerance that defines the range that is tolerated to call it close to another `CGPoint`.
+        If the actual point is close to the `point` from the parameter it will return true.
+     
+        - Parameters:
+            - point: The `CGPoint` that will be checked if it is close to the actual `CGPoint`.
+            - tolerance: Defines what range is tolerated to be close to the other `point`.
+     
+        - Returns: `Boolean` - if close to return true, else false.
+    */
     func isCloseTo(point: CGPoint, tolerance: CGFloat) -> Bool {
         let xIsClose = self.x < point.x + tolerance && self.x > point.x - tolerance
         let yIsClose = self.y < point.y + tolerance && self.y > point.y - tolerance
@@ -157,31 +185,49 @@ public extension CGPoint {
     }
 }
 
+/// Add Operator `+` for two `CGPoints` to summerise them to one `CGPoint`.
 public func + (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
 
+/// Add Operator `*` for two `CGPoints` to multiply both with each other to one `CGPoint`.
 public func * (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x * right.x, y: left.y * right.y)
 }
 
+/// Add Operator `*` to multiply a CGPoint to a CGFloat to get a CGPoint.
 public func * (left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x * right, y: left.y * right)
 }
 
+/// Add Operator `-` for two `CGPoints` subtract the `right` from the `left` `CGPoint`.
 public func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x - right.x, y: left.y - right.y)
 }
 
+/// Add Operator `/` to devide a `CGPoints` by the value of a `CGFloat`.
 public func / (left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x / right, y: left.y / right)
 }
 
+/// Add Operator `/` for two `CGPoints`. The left will be devided by the right one.
 public func / (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x / right.x, y: left.y / right.y)
 }
 
 public extension NSURL {
+    /**
+        Mode for image urls.
+        It defines in which mode an image will be provided.
+     
+        - Resize: Resize image mode. The image can be streched or compressed.
+        - Crop: Cropped image mode. It will crop into an image so only a part of the image will be provided.
+                 If no value is explicitly set, the default behavior is to center the image.
+        - Fit: Resizes the image to fit within the width and height boundaries without cropping or distorting the image. 
+                The resulting image is assured to match one of the constraining dimensions, 
+                while the other dimension is altered to maintain the same aspect ratio of the input image.
+        - Default: Default/normal image mode. No changes to the ratio.
+    */
     public enum ImageUrlMode : String {
         case Resize = "resize"
         case Crop   = "crop"
@@ -189,6 +235,14 @@ public extension NSURL {
         case Default = "default"
     }
     
+    /**
+        Choose the `size` and the `mode` for the image url to define how an image will be provided from the backend.
+     
+        - Parameters: 
+            - size: Set `size` as `CGSize` to define the size of the image that will be provided.
+            - mode: Select a mode from predefined `ImageUrlMode` to set up a mode and define how an image will be provided.
+        - Returns: `URL` as a `NSURL`.
+    */
     public func urlByAppendingSize(size: CGSize, mode:ImageUrlMode = .Default) -> NSURL {
         let urlComponents = NSURLComponents(URL: self, resolvingAgainstBaseURL: false)
         if let urlComponents = urlComponents {
@@ -220,6 +274,12 @@ public extension NSURL {
 }
 
 public extension UIImage {
+    /**
+        Corrects the rotation/orientation of an image.
+        When an image inadvertently was taken with the wrong orientation, this function will correct the rotation/orientation again.
+     
+        - Returns: The orientation corrected image as an `UIImage`.
+    */
     public func rotationCorrectedImage() -> UIImage {
         //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
         
