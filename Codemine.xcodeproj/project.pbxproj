@@ -15,6 +15,9 @@
 		275BCAC31C57D20D00FF3647 /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABD1C57D20D00FF3647 /* SharedExtensions.swift */; };
 		275BCAC41C57D20D00FF3647 /* SharedUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABE1C57D20D00FF3647 /* SharedUIExtensions.swift */; };
 		293490EC1C6CA0E800E8305E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EB1C6CA0E800E8305E /* StringExtensions.swift */; };
+		293490EE1C6CAFD500E8305E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
+		293490F01C6CAFF200E8305E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
+		293490F21C6CB00900E8305E /* GrandCentralDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		275BCABD1C57D20D00FF3647 /* SharedExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExtensions.swift; sourceTree = "<group>"; };
 		275BCABE1C57D20D00FF3647 /* SharedUIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUIExtensions.swift; sourceTree = "<group>"; };
 		293490EB1C6CA0E800E8305E /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		293490ED1C6CAFD500E8305E /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		293490EF1C6CAFF200E8305E /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandCentralDispatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 				293490EB1C6CA0E800E8305E /* StringExtensions.swift */,
 				275BCAA21C57D1B500FF3647 /* Codemine.h */,
 				275BCAA41C57D1B500FF3647 /* Info.plist */,
+				293490ED1C6CAFD500E8305E /* Application.swift */,
+				293490EF1C6CAFF200E8305E /* Then.swift */,
+				293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */,
 			);
 			path = Codemine;
 			sourceTree = "<group>";
@@ -210,9 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293490EE1C6CAFD500E8305E /* Application.swift in Sources */,
 				275BCAC41C57D20D00FF3647 /* SharedUIExtensions.swift in Sources */,
 				293490EC1C6CA0E800E8305E /* StringExtensions.swift in Sources */,
 				275BCAC21C57D20D00FF3647 /* NSString+Ranges.m in Sources */,
+				293490F21C6CB00900E8305E /* GrandCentralDispatch.swift in Sources */,
+				293490F01C6CAFF200E8305E /* Then.swift in Sources */,
 				275BCAC31C57D20D00FF3647 /* SharedExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
