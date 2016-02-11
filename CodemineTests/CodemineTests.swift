@@ -33,4 +33,14 @@ class CodemineTests: XCTestCase {
         }
     }
     
+    // MARK: - StringExtensions tests
+    
+    func testTrueEmailAddress() {
+        XCTAssertTrue("john@nodes.dk".isValidEmailAddress())
+    }
+    
+    func testFalseEmailAddress() {
+        XCTAssertFalse("joh@n@nodes.dk".isValidEmailAddress())
+    }
+    
 }
