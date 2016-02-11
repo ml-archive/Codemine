@@ -115,7 +115,7 @@ public extension UIView {
 }
 
 public extension CGRect {
-    /// Getter & Setter for `CGRect` var `y`
+    /// Getter & Setter for a `CGRect`'s  `origin.y`
     public var y: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(origin.x, newValue), size: size)
@@ -125,7 +125,7 @@ public extension CGRect {
         }
     }
     
-    /// Getter & Setter for `CGRect` var `x`
+    /// Getter & Setter for a `CGRect`s `origin.x`
     public var x: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(newValue, origin.y), size: size)
@@ -135,7 +135,7 @@ public extension CGRect {
         }
     }
     
-    /// Getter & Setter for `CGRect` var `height`
+    /// Getter & Setter for a `CGRect`'s `size.height`
     private var height: CGFloat {
         set {
             self = CGRect(origin: origin, size: CGSize(width: size.width, height: newValue))
@@ -145,7 +145,7 @@ public extension CGRect {
         }
     }
     
-    /// Getter & Setter for `CGRect` var `width`
+    /// Getter & Setter for a `CGRect`'s var `size.width`
     private var width: CGFloat {
         set {
             self = CGRect(origin: origin, size: CGSize(width: newValue, height: self.height))

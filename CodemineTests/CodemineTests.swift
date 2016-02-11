@@ -33,7 +33,7 @@ class CodemineTests: XCTestCase {
         }
     }
     
-    // MARK: - StringExtensions tests
+    // MARK: - String Extensions tests
     
     func testTrueEmailAddress() {
 		let validEmails = ["email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "email@123.123.123.123", "email@[123.123.123.123]", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
@@ -48,5 +48,47 @@ class CodemineTests: XCTestCase {
 			XCTAssertFalse(emailAddress.isValidEmailAddress(), "email \(emailAddress) was considered invalid, but it is not")
 		}
     }
-    
+	
+	
+	// MARK: - CGRect Extensions tests
+	
+	func testX() {
+		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+		XCTAssertEqual(rect.x, rect.origin.x)
+		
+		rect.x = 20
+		XCTAssertEqual(rect.origin.x, 20)
+	}
+	
+	func testY() {
+		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+		XCTAssertEqual(rect.y, rect.origin.y)
+		
+		rect.y = 20
+		XCTAssertEqual(rect.origin.y, 20)
+	}
+	
+	func testHeight() {
+		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+		XCTAssertEqual(rect.height, rect.size.height)
+		
+		// FIXME: why is height and width private? Why can't I set rect.height?
+//		rect.height = 20
+//		XCTAssertEqual(rect.size.height, 20)
+	}
+	
+	func testWidth() {
+		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+		XCTAssertEqual(rect.width, rect.size.width)
+		
+		// FIXME: why is height and width private? Why can't I set rect.width?
+//		rect.width = 20
+//		XCTAssertEqual(rect.size.width, 20)
+	}
+	
+	func testReversingSize() {
+		let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
+		let reversedRect = rect.rectByReversingSize()
+		XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
+	}
 }
