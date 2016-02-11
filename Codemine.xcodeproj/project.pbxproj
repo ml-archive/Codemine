@@ -10,12 +10,11 @@
 		275BCAA31C57D1B500FF3647 /* Codemine.h in Headers */ = {isa = PBXBuildFile; fileRef = 275BCAA21C57D1B500FF3647 /* Codemine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		275BCAAA1C57D1B500FF3647 /* Codemine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275BCA9F1C57D1B500FF3647 /* Codemine.framework */; };
 		275BCAAF1C57D1B500FF3647 /* CodemineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCAAE1C57D1B500FF3647 /* CodemineTests.swift */; };
-		275BCABF1C57D20D00FF3647 /* NSString+EmailValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 275BCAB91C57D20D00FF3647 /* NSString+EmailValidation.h */; };
-		275BCAC01C57D20D00FF3647 /* NSString+EmailValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABA1C57D20D00FF3647 /* NSString+EmailValidation.m */; };
 		275BCAC11C57D20D00FF3647 /* NSString+Ranges.h in Headers */ = {isa = PBXBuildFile; fileRef = 275BCABB1C57D20D00FF3647 /* NSString+Ranges.h */; };
 		275BCAC21C57D20D00FF3647 /* NSString+Ranges.m in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABC1C57D20D00FF3647 /* NSString+Ranges.m */; };
 		275BCAC31C57D20D00FF3647 /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABD1C57D20D00FF3647 /* SharedExtensions.swift */; };
 		275BCAC41C57D20D00FF3647 /* SharedUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCABE1C57D20D00FF3647 /* SharedUIExtensions.swift */; };
+		293490EC1C6CA0E800E8305E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EB1C6CA0E800E8305E /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +34,11 @@
 		275BCAA91C57D1B500FF3647 /* CodemineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodemineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275BCAAE1C57D1B500FF3647 /* CodemineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodemineTests.swift; sourceTree = "<group>"; };
 		275BCAB01C57D1B500FF3647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		275BCAB91C57D20D00FF3647 /* NSString+EmailValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EmailValidation.h"; sourceTree = "<group>"; };
-		275BCABA1C57D20D00FF3647 /* NSString+EmailValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmailValidation.m"; sourceTree = "<group>"; };
 		275BCABB1C57D20D00FF3647 /* NSString+Ranges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Ranges.h"; sourceTree = "<group>"; };
 		275BCABC1C57D20D00FF3647 /* NSString+Ranges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Ranges.m"; sourceTree = "<group>"; };
 		275BCABD1C57D20D00FF3647 /* SharedExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExtensions.swift; sourceTree = "<group>"; };
 		275BCABE1C57D20D00FF3647 /* SharedUIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUIExtensions.swift; sourceTree = "<group>"; };
+		293490EB1C6CA0E800E8305E /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +81,11 @@
 		275BCAA11C57D1B500FF3647 /* Codemine */ = {
 			isa = PBXGroup;
 			children = (
-				275BCAB91C57D20D00FF3647 /* NSString+EmailValidation.h */,
-				275BCABA1C57D20D00FF3647 /* NSString+EmailValidation.m */,
 				275BCABB1C57D20D00FF3647 /* NSString+Ranges.h */,
 				275BCABC1C57D20D00FF3647 /* NSString+Ranges.m */,
 				275BCABD1C57D20D00FF3647 /* SharedExtensions.swift */,
 				275BCABE1C57D20D00FF3647 /* SharedUIExtensions.swift */,
+				293490EB1C6CA0E800E8305E /* StringExtensions.swift */,
 				275BCAA21C57D1B500FF3647 /* Codemine.h */,
 				275BCAA41C57D1B500FF3647 /* Info.plist */,
 			);
@@ -111,7 +108,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275BCABF1C57D20D00FF3647 /* NSString+EmailValidation.h in Headers */,
 				275BCAA31C57D1B500FF3647 /* Codemine.h in Headers */,
 				275BCAC11C57D20D00FF3647 /* NSString+Ranges.h in Headers */,
 			);
@@ -215,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275BCAC41C57D20D00FF3647 /* SharedUIExtensions.swift in Sources */,
-				275BCAC01C57D20D00FF3647 /* NSString+EmailValidation.m in Sources */,
+				293490EC1C6CA0E800E8305E /* StringExtensions.swift in Sources */,
 				275BCAC21C57D20D00FF3647 /* NSString+Ranges.m in Sources */,
 				275BCAC31C57D20D00FF3647 /* SharedExtensions.swift in Sources */,
 			);
@@ -403,6 +399,7 @@
 				275BCAB51C57D1B500FF3647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		275BCAB61C57D1B500FF3647 /* Build configuration list for PBXNativeTarget "CodemineTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +408,7 @@
 				275BCAB81C57D1B500FF3647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
