@@ -135,26 +135,6 @@ public extension CGRect {
         }
     }
     
-    /// Getter & Setter for a `CGRect`'s `size.height`
-    private var height: CGFloat {
-        set {
-            self = CGRect(origin: origin, size: CGSize(width: size.width, height: newValue))
-        }
-        get {
-            return self.size.height
-        }
-    }
-    
-    /// Getter & Setter for a `CGRect`'s var `size.width`
-    private var width: CGFloat {
-        set {
-            self = CGRect(origin: origin, size: CGSize(width: newValue, height: self.height))
-        }
-        get {
-            return self.size.width
-        }
-    }
-    
     /// Reversing width and height of a CGRect
     public func rectByReversingSize() -> CGRect {
         return CGRect(origin: self.origin, size: CGSizeMake(self.height, self.width))
@@ -179,8 +159,8 @@ public extension CGPoint {
         - Returns: `Boolean` - if close to return true, else false.
     */
     func isCloseTo(point: CGPoint, tolerance: CGFloat) -> Bool {
-        let xIsClose = self.x < point.x + tolerance && self.x > point.x - tolerance
-        let yIsClose = self.y < point.y + tolerance && self.y > point.y - tolerance
+        let xIsClose = self.x <= point.x + tolerance && self.x >= point.x - tolerance
+        let yIsClose = self.y <= point.y + tolerance && self.y >= point.y - tolerance
         return xIsClose && yIsClose
     }
 }
