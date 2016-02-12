@@ -115,7 +115,7 @@ public extension UIView {
 }
 
 public extension CGRect {
-    /// Getter & Setter for `CGRect` var `y`
+    /// Getter & Setter for a `CGRect`'s  `origin.y`
     public var y: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(origin.x, newValue), size: size)
@@ -125,33 +125,13 @@ public extension CGRect {
         }
     }
     
-    /// Getter & Setter for `CGRect` var `x`
+    /// Getter & Setter for a `CGRect`s `origin.x`
     public var x: CGFloat {
         set {
             self = CGRect(origin: CGPointMake(newValue, origin.y), size: size)
         }
         get {
             return self.origin.x
-        }
-    }
-    
-    /// Getter & Setter for `CGRect` var `height`
-    private var height: CGFloat {
-        set {
-            self = CGRect(origin: origin, size: CGSize(width: size.width, height: newValue))
-        }
-        get {
-            return self.size.height
-        }
-    }
-    
-    /// Getter & Setter for `CGRect` var `width`
-    private var width: CGFloat {
-        set {
-            self = CGRect(origin: origin, size: CGSize(width: newValue, height: self.height))
-        }
-        get {
-            return self.size.width
         }
     }
     
@@ -179,8 +159,8 @@ public extension CGPoint {
         - Returns: `Boolean` - if close to return true, else false.
     */
     func isCloseTo(point: CGPoint, tolerance: CGFloat) -> Bool {
-        let xIsClose = self.x < point.x + tolerance && self.x > point.x - tolerance
-        let yIsClose = self.y < point.y + tolerance && self.y > point.y - tolerance
+        let xIsClose = self.x <= point.x + tolerance && self.x >= point.x - tolerance
+        let yIsClose = self.y <= point.y + tolerance && self.y >= point.y - tolerance
         return xIsClose && yIsClose
     }
 }
