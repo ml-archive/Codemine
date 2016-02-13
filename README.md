@@ -1,0 +1,22 @@
+# Codemine
+
+Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project.
+
+
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Plaform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nodes-ios/nstack-translations-generator/blob/master/LICENSE)
+
+## 📦 Installation
+
+### Carthage
+~~~
+github "nodes-ios/Codemine"
+~~~
+
+
+## 👥 Credits
+Made with ❤️ at [Nodes](http://nodesagency.com).
+
+## 📄 License
+**Codemine** is available under the MIT license. See the [LICENSE](https://github.com/nodes-ios/KeyboardHelper/blob/master/LICENSE) file for more info.
