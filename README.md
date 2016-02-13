@@ -2,7 +2,7 @@
 
 Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project.
 
-
+[![Travis](https://img.shields.io/travis/nodes-ios/Codemine.svg)](https://travis-ci.org/nodes-ios/Codemine)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Plaform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nodes-ios/nstack-translations-generator/blob/master/LICENSE)
