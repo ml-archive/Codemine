@@ -47,6 +47,13 @@ private func getQueue(queue queueType: DispatchQueue = .Main) -> dispatch_queue_
     return queue
 }
 
+/**
+ Executes the closure passed in as an argument after a given delay on a given queue.
+
+ - parameter delay: Delaytime in seconds.
+ - parameter queue: The queue on which to execute the given closure.
+ - parameter closure: Closure that should be executed after the delay.
+ */
 public func delay(delay:Double, queue queueType: DispatchQueue = .Main, closure: () -> Void) {
     dispatch_after(
         dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))),
