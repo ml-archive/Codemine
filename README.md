@@ -17,7 +17,9 @@ github "nodes-ios/Codemine"
 
 
 ## 👥 Credits
-Made with ❤️ at [Nodes](http://nodesagency.com).
+Made with ❤️ at [Nodes](http://nodesagency.com). 
+
+Some functions & tweaks were borrowed from Hyper's [Sugar](https://github.com/hyperoslo/Sugar) 🙈.
 
 ## 📄 License
 **Codemine** is available under the MIT license. See the [LICENSE](https://github.com/nodes-ios/KeyboardHelper/blob/master/LICENSE) file for more info.
