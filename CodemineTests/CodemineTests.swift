@@ -36,17 +36,17 @@ class CodemineTests: XCTestCase {
     // MARK: - String Extensions tests
     
     func testTrueEmailAddress() {
-		let validEmails = ["email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
-		for emailAddress in validEmails {
-			XCTAssertTrue(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered invalid, but it is not")
-		}
+        let validEmails = ["email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
+        for emailAddress in validEmails {
+            XCTAssertTrue(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered invalid, but it is not")
+        }
     }
     
     func testFalseEmailAddress() {
-		let invalidEmails = ["plainaddress", "#@%^%#$@#$@#.com", "@example.com", "Joe Smith <email@example.com>", "email.example.com", "email@example@example.com", ".email@example.com", "email.@example.com", "email..email@example.com", "あいうえお@example.com", "email@example.com (Joe Smith)", "email@example", "email@-example.com", "email@example..com", "Abc..123@example.com"]
-		for emailAddress in invalidEmails {
-			XCTAssertFalse(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered valid, but it is not")
-		}
+        let invalidEmails = ["plainaddress", "#@%^%#$@#$@#.com", "@example.com", "Joe Smith <email@example.com>", "email.example.com", "email@example@example.com", ".email@example.com", "email.@example.com", "email..email@example.com", "あいうえお@example.com", "email@example.com (Joe Smith)", "email@example", "email@-example.com", "email@example..com", "Abc..123@example.com"]
+        for emailAddress in invalidEmails {
+            XCTAssertFalse(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered valid, but it is not")
+        }
     }
     
     func testRange() {
@@ -54,31 +54,47 @@ class CodemineTests: XCTestCase {
         let range = str.rangeFromString("e", toString: " w")
         XCTAssertTrue(range?.startIndex == str.startIndex.advancedBy(1) && range?.endIndex == str.startIndex.advancedBy(7), "range = \(range)")
     }
-	
-	
-	// MARK: - CGRect Extensions tests
-	
-	func testX() {
-		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
-		XCTAssertEqual(rect.x, rect.origin.x)
-		
-		rect.x = 20
-		XCTAssertEqual(rect.origin.x, 20)
-	}
-	
-	func testY() {
-		var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
-		XCTAssertEqual(rect.y, rect.origin.y)
-		
-		rect.y = 20
-		XCTAssertEqual(rect.origin.y, 20)
-	}
-	
-	func testReversingSize() {
-		let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
-		let reversedRect = rect.rectByReversingSize()
-		XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
-	}
+    
+    func testCamerlCaseToUnderscore() {
+        let snakeCaseStr1 = "user_id"
+        let camelCaseStr1 = "userId"
+        let snakeCaseStr2 = "is_user_active_member_of_current_group"
+        let camelCaseStr2 = "isUserActiveMemberOfCurrentGroup"
+        
+        XCTAssertEqual(snakeCaseStr1, camelCaseStr1.camelCaseToUnderscore())
+        XCTAssertEqual(snakeCaseStr2, camelCaseStr2.camelCaseToUnderscore())
+    }
+    
+    
+    // MARK: - CGRect Extensions tests
+    
+    func testX() {
+        var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+        XCTAssertEqual(rect.x, rect.origin.x)
+        
+        rect.x = 20
+        XCTAssertEqual(rect.origin.x, 20)
+    }
+    
+    func testY() {
+        var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
+        XCTAssertEqual(rect.y, rect.origin.y)
+        
+        rect.y = 20
+        XCTAssertEqual(rect.origin.y, 20)
+    }
+    
+    func testReversingSize() {
+        let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
+        let reversedRect = rect.rectByReversingSize()
+        XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
+    }
+    
+    func testSizeAddition() {
+        let size1 = CGSize(width: 20, height: 40)
+        let size2 = CGSize(width: 121, height: 576)
+        XCTAssertEqual(size1+size2, CGSize(width: size1.width + size2.width, height: size1.height+size2.height))
+    }
     
     // MARK: - CGPoint extension tests
     
@@ -139,5 +155,16 @@ class CodemineTests: XCTestCase {
         let scalar2 : CGFloat = 0
         XCTAssertTrue((point1/scalar2).x == point1.x / scalar2 && (point1/scalar2).y == point1.y / scalar2)
         
+    }
+    
+    // MARK: - Then test
+    func testThen() {
+        let view = UIView().then {
+            $0.backgroundColor = UIColor.blackColor()
+            $0.alpha = 0.5
+        }
+        
+        XCTAssertEqual(view.alpha, 0.5)
+        XCTAssertEqual(view.backgroundColor, UIColor.blackColor())
     }
 }
