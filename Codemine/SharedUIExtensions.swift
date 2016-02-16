@@ -84,6 +84,22 @@ public extension UIImage {
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         return newImage
     }
+    
+    /**
+     Corrects the rotation/orientation of an image.
+     When an image inadvertently was taken with the wrong orientation, this function will correct the rotation/orientation again.
+     
+     - Returns: The orientation corrected image as an `UIImage`.
+     */
+    public func rotationCorrectedImage() -> UIImage {
+        //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
+        self.drawInRect(CGRect(origin: CGPointZero, size: self.size))
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return normalizedImage;
+    }
 }
 
 public extension UIView {
@@ -216,57 +232,27 @@ public extension NSURL {
     }
     
     /**
+        Adds height, width and mode paramters to an url. To be used when fetching an image from a CDN, for example.
         Choose the `size` and the `mode` for the image url to define how an image will be provided from the backend.
      
         - Parameters: 
             - size: Set `size` as `CGSize` to define the size of the image that will be provided.
             - mode: Select a mode from predefined `ImageUrlMode` to set up a mode and define how an image will be provided.
+            - heightParameterName: the name of the height paramter. Default is 'h'
+            - widthParameterName: the name of the width paramter. Default is 'h'
         - Returns: `URL` as a `NSURL`.
     */
-    public func urlByAppendingSize(size: CGSize, mode:ImageUrlMode = .Default) -> NSURL {
-        let urlComponents = NSURLComponents(URL: self, resolvingAgainstBaseURL: false)
-        if let urlComponents = urlComponents {
-            if NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1 {
-                var queryItems:[NSURLQueryItem] = urlComponents.queryItems ?? []
-                queryItems.append(NSURLQueryItem(name: "w", value: "\(size.width * UIScreen.mainScreen().scale )"))
-                queryItems.append(NSURLQueryItem(name: "h", value: "\(size.height * UIScreen.mainScreen().scale)"))
-                if mode != .Default {
-                    queryItems.append(NSURLQueryItem(name: "mode", value: mode.rawValue))
-                }
-                urlComponents.queryItems = queryItems
-            } else {
-                var query = urlComponents.query ?? ""
-                if query.characters.count > 0 {
-                    query += "?"
-                } else {
-                    query += "&"
-                }
-                
-                query += "width=\(size.width)&height=\(size.height)"
-                urlComponents.query = query
-            }
-            return urlComponents.URL ?? self
-        }
+    public func urlByAppendingAssetSize(size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> NSURL {
+        guard let urlComponents = NSURLComponents(URL: self, resolvingAgainstBaseURL: false) else { return self }
         
-        print("Could not parse components for url: \(self)")
-        return self
+        var queryItems:[NSURLQueryItem] = urlComponents.queryItems ?? []
+        queryItems.append(NSURLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.mainScreen().scale ))"))
+        queryItems.append(NSURLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.mainScreen().scale ))"))
+        if mode != .Default {
+            queryItems.append(NSURLQueryItem(name: "mode", value: mode.rawValue))
+        }
+        urlComponents.queryItems = queryItems
+        return urlComponents.URL ?? self
     }
 }
 
-public extension UIImage {
-    /**
-        Corrects the rotation/orientation of an image.
-        When an image inadvertently was taken with the wrong orientation, this function will correct the rotation/orientation again.
-     
-        - Returns: The orientation corrected image as an `UIImage`.
-    */
-    public func rotationCorrectedImage() -> UIImage {
-        //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
-        
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
-        self.drawInRect(CGRect(origin: CGPointZero, size: self.size))
-        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return normalizedImage;
-    }
-}
