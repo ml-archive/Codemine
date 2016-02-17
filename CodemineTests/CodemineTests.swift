@@ -205,8 +205,7 @@ class CodemineTests: XCTestCase {
         
         let url4 = url.urlByAppendingAssetSize(size, mode: .Crop)
         XCTAssertEqual(url4.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.mainScreen().scale ))&h=\(Int(size.height *  UIScreen.mainScreen().scale))&mode=crop")
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        view.roundViewCorners(UIRectCorner.AllCorners, radius: 4.0)
+
     }
     
     func testError() {
