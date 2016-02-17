@@ -6,7 +6,7 @@
 ![Plaform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nodes-ios/Codemine/blob/master/LICENSE)
 
-Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project.
+Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project. Requires iOS 8.0+.
 
 
 
@@ -128,12 +128,12 @@ let red = UIColor(rgb: 0xFF0000)
 ```swift
 let image = UIImage.imageFromColor(UIColor.redColor(), CGSize(width: 512, height: 256), cornerRadius:4.0)
 ```
-Returns a UIImage filled with red color, of the specified size and with the specified corner radius
+Returns a `UIImage` filled with red color, of the specified size and with the specified corner radius
 
 ```swift
 let image = UIImage.imageByEmbeddingIconIn(UIImage(named:"profilePhoto"), icon: UIImage(named:"favouriteIcon"))
 ```
-Returns a UIImage composed by overlaying the icon on top of the first image.
+Returns a `UIImage` composed by overlaying the icon on top of the first image.
 
 ### UIView
 ```swift
@@ -145,7 +145,7 @@ Returns a view instantiated from the specified nib.
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
 view.roundViewCorners(UIRectCorner.AllCorners, radius: 4.0)
 ```
-Rounds the specified corners of a UIView to the specified radius.
+Rounds the specified corners of a `UIView` to the specified radius.
 
 ### Then
 
