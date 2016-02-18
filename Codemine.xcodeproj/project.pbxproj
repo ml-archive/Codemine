@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0132B4CF1C70E616007BC588 /* NSError+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132B4CE1C70E616007BC588 /* NSError+Utilities.swift */; };
-		0132B4D11C70E6F4007BC588 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132B4D01C70E6F4007BC588 /* Protocols.swift */; };
+		0132B4D11C70E6F4007BC588 /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132B4D01C70E6F4007BC588 /* NibInstantiable.swift */; };
 		275BCAA31C57D1B500FF3647 /* Codemine.h in Headers */ = {isa = PBXBuildFile; fileRef = 275BCAA21C57D1B500FF3647 /* Codemine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		275BCAAA1C57D1B500FF3647 /* Codemine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275BCA9F1C57D1B500FF3647 /* Codemine.framework */; };
 		275BCAAF1C57D1B500FF3647 /* CodemineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BCAAE1C57D1B500FF3647 /* CodemineTests.swift */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0132B4CE1C70E616007BC588 /* NSError+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utilities.swift"; sourceTree = "<group>"; };
-		0132B4D01C70E6F4007BC588 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		0132B4D01C70E6F4007BC588 /* NibInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
 		275BCA9F1C57D1B500FF3647 /* Codemine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codemine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		275BCAA21C57D1B500FF3647 /* Codemine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codemine.h; sourceTree = "<group>"; };
 		275BCAA41C57D1B500FF3647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,13 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				291272D01C75F37400FB1BBD /* Extensions */,
-				275BCAA21C57D1B500FF3647 /* Codemine.h */,
-				275BCAA41C57D1B500FF3647 /* Info.plist */,
+				291272D11C75F6D000FB1BBD /* Protocols */,
 				293490ED1C6CAFD500E8305E /* Application.swift */,
 				293490EF1C6CAFF200E8305E /* Then.swift */,
 				293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */,
-				0132B4D01C70E6F4007BC588 /* Protocols.swift */,
 				291272CE1C75F32200FB1BBD /* Operators.swift */,
+				275BCAA21C57D1B500FF3647 /* Codemine.h */,
+				275BCAA41C57D1B500FF3647 /* Info.plist */,
 			);
 			path = Codemine;
 			sourceTree = "<group>";
@@ -137,6 +137,14 @@
 				291272CC1C75EECB00FB1BBD /* UIView+Utilities.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		291272D11C75F6D000FB1BBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0132B4D01C70E6F4007BC588 /* NibInstantiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +260,7 @@
 				291272C51C75EE4F00FB1BBD /* CGPoint+Utilities.swift in Sources */,
 				291272BB1C75EC2C00FB1BBD /* String+Range.swift in Sources */,
 				291272C91C75EE9A00FB1BBD /* NSURL+AssetSize.swift in Sources */,
-				0132B4D11C70E6F4007BC588 /* Protocols.swift in Sources */,
+				0132B4D11C70E6F4007BC588 /* NibInstantiable.swift in Sources */,
 				291272C31C75EDE300FB1BBD /* CGRect+Utilities.swift in Sources */,
 				291272CB1C75EEB500FB1BBD /* UIImage+Utilities.swift in Sources */,
 				291272CF1C75F32200FB1BBD /* Operators.swift in Sources */,
