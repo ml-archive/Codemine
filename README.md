@@ -31,17 +31,6 @@ let mainAppScheme = Application.mainScheme // CFBundleURLSchemes.first : String?
 
 Gain easy access to main bundle information.
 
-### CGRect
-```swift
-var rect = CGRect(x: 10, y: 10, width: 120, height: 100)
-rect.x = 50
-print(rect)	// outputs x:50, y:20, width: 120, height:100
-rect.y = -10
-print(rect)	// outputs x:50, y:-10, width: 120, height:100
-let reversedRect = rect.rectByReversingSize()
-print(reversedRect)	// outputs x:50, y:-10, width:100, height:120
-```
-
 ### CGPoint
 ```swift
 let point1 = CGPoint(x: 5, y: 5)
@@ -54,6 +43,24 @@ print(point1*2)			// (10, 10)
 print(point1-point2)	// (0, -1)
 print(point1/point2)	// (1, 0.83)
 print(point1/5)			// (1, 1)
+```
+
+### CGRect
+```swift
+var rect = CGRect(x: 10, y: 10, width: 120, height: 100)
+rect.x = 50
+print(rect)	// outputs x:50, y:20, width: 120, height:100
+rect.y = -10
+print(rect)	// outputs x:50, y:-10, width: 120, height:100
+let reversedRect = rect.rectByReversingSize()
+print(reversedRect)	// outputs x:50, y:-10, width:100, height:120
+```
+
+### CGSize
+```swift
+let size1 = CGSize(width: 20, height: 40)
+let size2 = CGSize(width: 121, height: 576)
+print(size1+size2)		// CGSize(width: 141, height: 616)
 ```
 
 ### Grand Central Dispatch
