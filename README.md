@@ -21,6 +21,23 @@ Codemine is a collection of extensions containing useful functions and syntactic
 github "nodes-ios/Codemine"
 ~~~
 
+### Swit Package Manager
+To use Codemine as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following to your `Package.swift` file.  
+
+~~~swift
+import PackageDescription
+
+let package = Package(
+    name: "YourPackage",
+    dependencies: [
+        .Package(url: "https://github.com/nodes-ios/Codemine.git", majorVersion: 0)
+    ]
+)
+~~~
+
+**NOTE:** This doesn't currently work as SPM doens't support iOS, but once it will we will already be supporting it! :)
+
+
 ## 💻 Usage
 
 ### Application
