@@ -107,8 +107,7 @@
 				293490EF1C6CAFF200E8305E /* Then.swift */,
 				293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */,
 				291272CE1C75F32200FB1BBD /* Operators.swift */,
-				275BCAA21C57D1B500FF3647 /* Codemine.h */,
-				275BCAA41C57D1B500FF3647 /* Info.plist */,
+				291272D21C75F7CF00FB1BBD /* Supporting Files */,
 			);
 			path = Codemine;
 			sourceTree = "<group>";
@@ -145,6 +144,15 @@
 				0132B4D01C70E6F4007BC588 /* NibInstantiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		291272D21C75F7CF00FB1BBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				275BCAA21C57D1B500FF3647 /* Codemine.h */,
+				275BCAA41C57D1B500FF3647 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
