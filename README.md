@@ -22,7 +22,7 @@ github "nodes-ios/Codemine"
 ~~~
 
 ### Swit Package Manager
-To use KeyboardHelper as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following to your `Package.swift` file.  
+To use Codemine as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following to your `Package.swift` file.  
 
 ~~~swift
 import PackageDescription
