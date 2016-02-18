@@ -8,7 +8,8 @@
 
 import Foundation
 
-extension NSError {
+
+public extension NSError {
     convenience init(domain: String, code: Int, description: String) {
         self.init(domain: domain, code: code, userInfo: [NSLocalizedDescriptionKey : description])
     }
