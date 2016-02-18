@@ -1,0 +1,1 @@
+../Codemine/Extensions/NSError+Utilities.swift
