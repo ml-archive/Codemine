@@ -6,8 +6,12 @@
 ![Plaform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nodes-ios/Codemine/blob/master/LICENSE)
 
-Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project. Requires iOS 8.0+.
+Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project.
 
+
+## 📝 Requirements
+
+* iOS 8.0+
 
 
 ## 📦 Installation
@@ -17,7 +21,7 @@ Codemine is a collection of extensions containing useful functions and syntactic
 github "nodes-ios/Codemine"
 ~~~
 
-## Usage
+## 💻 Usage
 
 ### Application
 ```swift
