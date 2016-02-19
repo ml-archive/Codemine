@@ -30,7 +30,11 @@ public extension CGRect {
         }
     }
     
-    /// Reversing width and height of a CGRect
+    /**
+     Reverses the width and height of a 'CGRect'
+     
+     - returns: a new CGRect with the width and height reversed to those of the current one
+     */
     public func rectByReversingSize() -> CGRect {
         return CGRect(origin: self.origin, size: CGSizeMake(self.height, self.width))
     }
