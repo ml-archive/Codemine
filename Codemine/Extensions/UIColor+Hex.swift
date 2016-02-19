@@ -11,6 +11,13 @@ import Foundation
 
 public extension UIColor {
     
+    /**
+     Convenience initializer for
+     
+     - parameter rgb: UInt value in hex of the color. For example, 0xFF0000 or 0x00FFFF
+     
+     - returns: a UIColor with the specified hex value
+     */
     public convenience init(rgb: UInt) {
         self.init(
             red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,

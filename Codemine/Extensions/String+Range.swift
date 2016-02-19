@@ -13,7 +13,13 @@ public extension String {
     private var range: Range<Index> {
         return Range(start: self.startIndex, end: self.endIndex)
     }
-    
+    /**
+     Checks if a range appears in a String.
+     
+     - parameter range: the range that is checked
+     
+     - returns: true if the string contains that range, false otherwise
+     */
     private func containsRange(range: Range<Index>) -> Bool {
         if range.startIndex < self.startIndex || range.endIndex > self.endIndex {
             return false

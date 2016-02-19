@@ -11,18 +11,18 @@ import Foundation
 
 public extension UIImage {
     /**
-     Create an `UIImage` with customized background color, size and radius of corners.
+     Create an `UIImage` with specified background color, size and corner radius.
      
      Parameter `color` is used for the background color,
      parameter `size` to set the size of the the holder rectangle,
      parameter `cornerRadius` for setting up the rounded corners.
      
      - Parameters:
-     - color: Background color as `UIColor`.
-     - size: Size of image as `CGSize`.
-     - cornerRadius: Radius of corners as `CGFloat`.
+     - color: The background color.
+     - size: The size of the image.
+     - cornerRadius: The corner radius.
      
-     - Returns: A customized `UIImage`.
+     - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
     public class func imageFromColor(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
         
@@ -57,9 +57,9 @@ public extension UIImage {
      The `UIImage` that is set with the parameter `icon` will be centered on `imageOne`.
      
      - Parameters:
-     - imageOne: Background image.
-     - icon: Embedded image that will be on top.
-     - Returns: Combined image as `UIImage`.
+     - imageOne: The background image.
+     - icon: The embedded image that will be on top.
+     - Returns: The combined image as `UIImage`.
      */
     public class func imageByEmbeddingIconIn(imageOne: UIImage, icon: UIImage) -> UIImage {
         let newSize = CGSizeMake(imageOne.size.width, imageOne.size.height)
