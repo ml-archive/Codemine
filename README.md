@@ -2,7 +2,6 @@
 
 [![Travis](https://img.shields.io/travis/nodes-ios/Codemine.svg)](https://travis-ci.org/nodes-ios/Codemine)
 [![Codecov](https://img.shields.io/codecov/c/github/nodes-ios/Codemine.svg)](https://codecov.io/github/nodes-ios/Codemine)
-[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/Codemine.svg)](http://cocoadocs.org/docsets/Codemine/)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Codemine.svg)](https://cocoapods.org/pods/Codemine)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)
