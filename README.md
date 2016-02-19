@@ -2,9 +2,13 @@
 
 [![Travis](https://img.shields.io/travis/nodes-ios/Codemine.svg)](https://travis-ci.org/nodes-ios/Codemine)
 [![Codecov](https://img.shields.io/codecov/c/github/nodes-ios/Codemine.svg)](https://codecov.io/github/nodes-ios/Codemine)
+[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/Codemine.svg)](http://cocoadocs.org/docsets/Codemine/)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Codemine.svg)](https://cocoapods.org/pods/Codemine)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)
 ![Plaform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nodes-ios/Codemine/blob/master/LICENSE)
+[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=nodes-ios/codemine)](http://clayallsopp.github.io/readme-score?url=nodes-ios/codemine)
 
 Codemine is a collection of extensions containing useful functions and syntactic sugar for your Swift project.
 
@@ -20,6 +24,11 @@ Codemine is a collection of extensions containing useful functions and syntactic
 ~~~
 github "nodes-ios/Codemine"
 ~~~
+
+### CocoaPods
+~~~
+pod 'Codemine', '~> 0.1.0'
+~~~ 
 
 ### Swit Package Manager
 To use Codemine as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following to your `Package.swift` file.  
