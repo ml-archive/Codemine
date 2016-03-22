@@ -11,7 +11,7 @@ import Foundation
 
 public extension String {
     private var range: Range<Index> {
-        return Range(start: self.startIndex, end: self.endIndex)
+        return Range(self.startIndex..<self.endIndex)
     }
     /**
      Checks if a range appears in a String.
@@ -54,7 +54,7 @@ public extension String {
         
         switch searchType {
         case .LeftToRight:
-            return Range(start: firstRange.startIndex, end: secondRange.endIndex)
+            return Range(firstRange.startIndex..<secondRange.endIndex)
         default:
             print("Other search options not yet implemented.")
         }
