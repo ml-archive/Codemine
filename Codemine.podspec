@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "Nodes Agency - iOS" => "ios@nodes.dk" }
-  s.social_media_url   = "http://twitter.com/nodesdk"
+  s.social_media_url   = "http://twitter.com/nodes_ios"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
