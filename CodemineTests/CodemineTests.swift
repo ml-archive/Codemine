@@ -36,7 +36,7 @@ class CodemineTests: XCTestCase {
     // MARK: - String Extensions tests
     
     func testTrueEmailAddress() {
-        let validEmails = ["email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
+        let validEmails = ["TeSt@TesT.COM", "Test@test.com", "email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
         for emailAddress in validEmails {
             XCTAssertTrue(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered invalid, but it is not")
         }
