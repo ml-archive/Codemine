@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import CoreGraphics
+import UIKit
 
 public extension NSURL {
     /**

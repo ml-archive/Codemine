@@ -6,7 +6,7 @@
 //  Copyright © 2016 Nodes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Codemine.
 FOUNDATION_EXPORT double CodemineVersionNumber;
@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double CodemineVersionNumber;
 FOUNDATION_EXPORT const unsigned char CodemineVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Codemine/PublicHeader.h>
-
-

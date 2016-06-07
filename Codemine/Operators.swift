@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /// Add Operator `+` for two `CGPoints` to summerise them to one `CGPoint`.
 public func + (left: CGPoint, right: CGPoint) -> CGPoint {

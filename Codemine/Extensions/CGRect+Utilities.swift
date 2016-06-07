@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreGraphics
 
 public extension CGRect {
     /// Getter & Setter for a `CGRect`'s  `origin.y`
