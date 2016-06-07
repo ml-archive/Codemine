@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "01CD40211D071BAE0044887E"
-               BuildableName = "Codemine-Mac.framework"
+               BuildableName = "Codemine.framework"
                BlueprintName = "Codemine-Mac"
                ReferencedContainer = "container:Codemine.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01CD40211D071BAE0044887E"
-            BuildableName = "Codemine-Mac.framework"
+            BuildableName = "Codemine.framework"
             BlueprintName = "Codemine-Mac"
             ReferencedContainer = "container:Codemine.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01CD40211D071BAE0044887E"
-            BuildableName = "Codemine-Mac.framework"
+            BuildableName = "Codemine.framework"
             BlueprintName = "Codemine-Mac"
             ReferencedContainer = "container:Codemine.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01CD40211D071BAE0044887E"
-            BuildableName = "Codemine-Mac.framework"
+            BuildableName = "Codemine.framework"
             BlueprintName = "Codemine-Mac"
             ReferencedContainer = "container:Codemine.xcodeproj">
          </BuildableReference>

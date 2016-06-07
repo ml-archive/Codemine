@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "01CD40591D071BBD0044887E"
-               BuildableName = "Codemine-watchOS.framework"
+               BuildableName = "Codemine.framework"
                BlueprintName = "Codemine-watchOS"
                ReferencedContainer = "container:Codemine.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01CD40591D071BBD0044887E"
-            BuildableName = "Codemine-watchOS.framework"
+            BuildableName = "Codemine.framework"
             BlueprintName = "Codemine-watchOS"
             ReferencedContainer = "container:Codemine.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01CD40591D071BBD0044887E"
-            BuildableName = "Codemine-watchOS.framework"
+            BuildableName = "Codemine.framework"
             BlueprintName = "Codemine-watchOS"
             ReferencedContainer = "container:Codemine.xcodeproj">
          </BuildableReference>
