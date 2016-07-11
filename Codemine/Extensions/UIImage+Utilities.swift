@@ -24,16 +24,16 @@ public extension UIImage {
      
      - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
-    public class func imageFromColor(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
+    public class func imageFromColor(_ color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
         
         /// The base rectangle of the image.
-        let rect = CGRectMake(0, 0, size.width, size.height)
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         
         /// The graphics context of the image.
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         /// Image that will be retured.
         var image = UIGraphicsGetImageFromCurrentImageContext()
@@ -42,12 +42,12 @@ public extension UIImage {
         UIGraphicsBeginImageContext(size)
         
         UIBezierPath(roundedRect: rect, cornerRadius:cornerRadius).addClip()
-        image .drawInRect(rect)
+        image? .draw(in: rect)
         
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
     /**
@@ -61,16 +61,16 @@ public extension UIImage {
      - icon: The embedded image that will be on top.
      - Returns: The combined image as `UIImage`.
      */
-    public class func imageByEmbeddingIconIn(imageOne: UIImage, icon: UIImage) -> UIImage {
-        let newSize = CGSizeMake(imageOne.size.width, imageOne.size.height)
+    public class func imageByEmbeddingIconIn(_ imageOne: UIImage, icon: UIImage) -> UIImage {
+        let newSize = CGSize(width: imageOne.size.width, height: imageOne.size.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
-        imageOne.drawInRect(CGRectMake(0,0,newSize.width,newSize.height))
+        imageOne.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
         
         // Center icon
-        icon.drawInRect(CGRectMake(imageOne.size.width/2 - icon.size.width/2, imageOne.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height), blendMode:CGBlendMode.Normal, alpha:1.0)
+        icon.draw(in: CGRect(x: imageOne.size.width/2 - icon.size.width/2, y: imageOne.size.height/2 - icon.size.height/2, width: icon.size.width, height: icon.size.height), blendMode:CGBlendMode.normal, alpha:1.0)
         
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         return newImage
     }
     
@@ -84,9 +84,9 @@ public extension UIImage {
         //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
-        self.drawInRect(CGRect(origin: CGPointZero, size: self.size))
+        self.draw(in: CGRect(origin: CGPoint.zero, size: self.size))
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        return normalizedImage;
+        return normalizedImage!;
     }
 }

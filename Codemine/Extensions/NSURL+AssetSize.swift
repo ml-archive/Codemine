@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-public extension NSURL {
+public extension URL {
     /**
      Mode for image urls.
      It defines in which mode an image will be provided.
@@ -41,16 +41,16 @@ public extension NSURL {
      - widthParameterName: the name of the width paramter. Default is 'h'
      - Returns: `URL` as a `NSURL`.
      */
-    public func urlByAppendingAssetSize(size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> NSURL {
-        guard let urlComponents = NSURLComponents(URL: self, resolvingAgainstBaseURL: false) else { return self }
+    public func urlByAppendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return self }
         
-        var queryItems:[NSURLQueryItem] = urlComponents.queryItems ?? []
-        queryItems.append(NSURLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.mainScreen().scale ))"))
-        queryItems.append(NSURLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.mainScreen().scale ))"))
+        var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
+        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main().scale ))"))
+        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main().scale ))"))
         if mode != .Default {
-            queryItems.append(NSURLQueryItem(name: "mode", value: mode.rawValue))
+            queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }
         urlComponents.queryItems = queryItems
-        return urlComponents.URL ?? self
+        return urlComponents.url ?? self
     }
 }

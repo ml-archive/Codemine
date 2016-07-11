@@ -23,8 +23,8 @@ import Foundation
 
 public struct Application {
     
-    private static func getString(key: String) -> String {
-        guard let infoDictionary = NSBundle.mainBundle().infoDictionary,
+    private static func getString(_ key: String) -> String {
+        guard let infoDictionary = Bundle.main.infoDictionary,
             value = infoDictionary[key] as? String
             else { return "" }
         
@@ -52,7 +52,7 @@ public struct Application {
     }()
     
     public static var schemes: [String] = {
-        guard let infoDictionary = NSBundle.mainBundle().infoDictionary,
+        guard let infoDictionary = Bundle.main.infoDictionary,
             urlTypes = infoDictionary["CFBundleURLTypes"] as? [AnyObject],
             urlType = urlTypes.first as? [String : AnyObject],
             urlSchemes = urlType["CFBundleURLSchemes"] as? [String]

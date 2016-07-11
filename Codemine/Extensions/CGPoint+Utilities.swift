@@ -21,7 +21,7 @@ public extension CGPoint {
      
      - Returns: `Boolean` - if close to return true, else false.
      */
-    func isCloseTo(point: CGPoint, tolerance: CGFloat) -> Bool {
+    func isCloseTo(_ point: CGPoint, tolerance: CGFloat) -> Bool {
         let xIsClose = self.x <= point.x + tolerance && self.x >= point.x - tolerance
         let yIsClose = self.y <= point.y + tolerance && self.y >= point.y - tolerance
         return xIsClose && yIsClose

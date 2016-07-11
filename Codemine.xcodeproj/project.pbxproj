@@ -12,15 +12,12 @@
 		01CD40481D071BB50044887E /* Codemine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD403E1D071BB50044887E /* Codemine.framework */; };
 		01CD40621D071BCB0044887E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
 		01CD40631D071BCB0044887E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
-		01CD40641D071BCB0044887E /* GrandCentralDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */; };
 		01CD40651D071BCB0044887E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272CE1C75F32200FB1BBD /* Operators.swift */; };
 		01CD40661D071BCC0044887E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
 		01CD40671D071BCC0044887E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
-		01CD40681D071BCC0044887E /* GrandCentralDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */; };
 		01CD40691D071BCC0044887E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272CE1C75F32200FB1BBD /* Operators.swift */; };
 		01CD406A1D071BCC0044887E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
 		01CD406B1D071BCC0044887E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
-		01CD406C1D071BCC0044887E /* GrandCentralDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */; };
 		01CD406D1D071BCC0044887E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272CE1C75F32200FB1BBD /* Operators.swift */; };
 		01CD40711D071BDB0044887E /* String+CaseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272B81C75EC1F00FB1BBD /* String+CaseConverter.swift */; };
 		01CD40721D071BDB0044887E /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272BA1C75EC2C00FB1BBD /* String+Range.swift */; };
@@ -64,7 +61,6 @@
 		291272CF1C75F32200FB1BBD /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272CE1C75F32200FB1BBD /* Operators.swift */; };
 		293490EE1C6CAFD500E8305E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
 		293490F01C6CAFF200E8305E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
-		293490F21C6CB00900E8305E /* GrandCentralDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +112,6 @@
 		291272CE1C75F32200FB1BBD /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		293490ED1C6CAFD500E8305E /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		293490EF1C6CAFF200E8305E /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandCentralDispatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +199,6 @@
 				291272D01C75F37400FB1BBD /* Extensions */,
 				293490ED1C6CAFD500E8305E /* Application.swift */,
 				293490EF1C6CAFF200E8305E /* Then.swift */,
-				293490F11C6CB00900E8305E /* GrandCentralDispatch.swift */,
 				291272CE1C75F32200FB1BBD /* Operators.swift */,
 				291272D21C75F7CF00FB1BBD /* Supporting Files */,
 			);
@@ -437,9 +431,11 @@
 					};
 					275BCA9E1C57D1B500FF3647 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					275BCAA81C57D1B500FF3647 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -532,7 +528,6 @@
 				01CD40871D071BDC0044887E /* String+EmailValidation.swift in Sources */,
 				01CD40621D071BCB0044887E /* Application.swift in Sources */,
 				01CD40861D071BDC0044887E /* String+Range.swift in Sources */,
-				01CD40641D071BCB0044887E /* GrandCentralDispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +555,6 @@
 				01CD407D1D071BDC0044887E /* String+EmailValidation.swift in Sources */,
 				01CD40661D071BCC0044887E /* Application.swift in Sources */,
 				01CD407C1D071BDC0044887E /* String+Range.swift in Sources */,
-				01CD40681D071BCC0044887E /* GrandCentralDispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +580,6 @@
 				01CD40731D071BDB0044887E /* String+EmailValidation.swift in Sources */,
 				01CD406A1D071BCC0044887E /* Application.swift in Sources */,
 				01CD40721D071BDB0044887E /* String+Range.swift in Sources */,
-				01CD406C1D071BCC0044887E /* GrandCentralDispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +597,6 @@
 				291272CF1C75F32200FB1BBD /* Operators.swift in Sources */,
 				291272BD1C75EC3900FB1BBD /* String+EmailValidation.swift in Sources */,
 				291272B91C75EC1F00FB1BBD /* String+CaseConverter.swift in Sources */,
-				293490F21C6CB00900E8305E /* GrandCentralDispatch.swift in Sources */,
 				293490F01C6CAFF200E8305E /* Then.swift in Sources */,
 				0132B4CF1C70E616007BC588 /* NSError+Utilities.swift in Sources */,
 				291272C11C75ED3900FB1BBD /* UIColor+Hex.swift in Sources */,
@@ -929,6 +921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -947,6 +940,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.Codemine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -957,6 +951,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.CodemineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -967,6 +962,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.CodemineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

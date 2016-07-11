@@ -28,7 +28,7 @@ class CodemineTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
@@ -52,15 +52,15 @@ class CodemineTests: XCTestCase {
     func testRange() {
         let str = "Hello world!"
         let range = str.rangeFromString("e", toString: " w")
-        XCTAssertTrue(range?.startIndex == str.startIndex.advancedBy(1) && range?.endIndex == str.startIndex.advancedBy(7), "range = \(range)")
+        XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
         XCTAssertNil(str.rangeFromString("a", toString: "e"))
         XCTAssertNil(str.rangeFromString("e", toString: "b"))
         
-        XCTAssertNil(str.rangeFromString("l", toString: "o", searchType: .RightToLeft, inRange: range))
+        XCTAssertNil(str.rangeFromString("l", toString: "o", searchType: .rightToLeft, inRange: range))
         
         let str2 = "abcdefghijklmnopqrstuvwxyz"
         let range2 = str2.rangeFromString("x", toString: "z")
-        XCTAssertNil(str.rangeFromString("h", toString: "e", searchType: .LeftToRight, inRange: range2))
+        XCTAssertNil(str.rangeFromString("h", toString: "e", searchType: .leftToRight, inRange: range2))
         
         
     }
@@ -170,12 +170,12 @@ class CodemineTests: XCTestCase {
     // MARK: - Then test
     func testThen() {
         let view = UIView().then {
-            $0.backgroundColor = UIColor.blackColor()
+            $0.backgroundColor = UIColor.black()
             $0.alpha = 0.5
         }
         
         XCTAssertEqual(view.alpha, 0.5)
-        XCTAssertEqual(view.backgroundColor, UIColor.blackColor())
+        XCTAssertEqual(view.backgroundColor, UIColor.black())
     }
     
     // MARK: - UIColor extension test
@@ -184,27 +184,27 @@ class CodemineTests: XCTestCase {
         let blue = UIColor(rgb: 0x0000FF)
         let magenta = UIColor(rgb: 0xFF00FF)
         
-        XCTAssertEqual(red, UIColor.redColor())
-        XCTAssertEqual(blue, UIColor.blueColor())
-        XCTAssertEqual(magenta, UIColor.magentaColor())
-        XCTAssertNotEqual(red, UIColor.yellowColor())
+        XCTAssertEqual(red, UIColor.red())
+        XCTAssertEqual(blue, UIColor.blue())
+        XCTAssertEqual(magenta, UIColor.magenta())
+        XCTAssertNotEqual(red, UIColor.yellow())
     }
     
     // MARK: - NSURL extension test
     func testURLWithSize() {
-        guard let url = NSURL(string: "https://example.com/image.png") else { XCTAssertTrue(false, "Failed to create NSURL"); return }
+        guard let url = URL(string: "https://example.com/image.png") else { XCTAssertTrue(false, "Failed to create NSURL"); return }
         let size = CGSize(width: 512, height: 256)
         let heightParameterName = "height"
         let widthParameterName = "width"
         
         let url2 = url.urlByAppendingAssetSize(size, mode: .Default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
-        XCTAssertEqual(url2.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.mainScreen().scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.mainScreen().scale))")
+        XCTAssertEqual(url2.absoluteString, url.absoluteString! + "?\(widthParameterName)=\(Int(size.width * UIScreen.main().scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main().scale))")
         
         let url3 = url.urlByAppendingAssetSize(size)
-        XCTAssertEqual(url3.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.mainScreen().scale ))&h=\(Int(size.height *  UIScreen.mainScreen().scale))")
+        XCTAssertEqual(url3.absoluteString, url.absoluteString! + "?w=\(Int(size.width * UIScreen.main().scale ))&h=\(Int(size.height *  UIScreen.main().scale))")
         
         let url4 = url.urlByAppendingAssetSize(size, mode: .Crop)
-        XCTAssertEqual(url4.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.mainScreen().scale ))&h=\(Int(size.height *  UIScreen.mainScreen().scale))&mode=crop")
+        XCTAssertEqual(url4.absoluteString, url.absoluteString! + "?w=\(Int(size.width * UIScreen.main().scale ))&h=\(Int(size.height *  UIScreen.main().scale))&mode=crop")
 
     }
     
