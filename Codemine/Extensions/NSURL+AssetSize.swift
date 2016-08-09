@@ -45,8 +45,8 @@ public extension URL {
         guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return self }
         
         var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
-        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main().scale ))"))
-        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main().scale ))"))
+        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main.scale ))"))
+        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main.scale ))"))
         if mode != .Default {
             queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }

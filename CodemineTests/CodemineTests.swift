@@ -170,12 +170,12 @@ class CodemineTests: XCTestCase {
     // MARK: - Then test
     func testThen() {
         let view = UIView().then {
-            $0.backgroundColor = UIColor.black()
+            $0.backgroundColor = UIColor.black
             $0.alpha = 0.5
         }
         
         XCTAssertEqual(view.alpha, 0.5)
-        XCTAssertEqual(view.backgroundColor, UIColor.black())
+        XCTAssertEqual(view.backgroundColor, UIColor.black)
     }
     
     // MARK: - UIColor extension test
@@ -184,10 +184,10 @@ class CodemineTests: XCTestCase {
         let blue = UIColor(rgb: 0x0000FF)
         let magenta = UIColor(rgb: 0xFF00FF)
         
-        XCTAssertEqual(red, UIColor.red())
-        XCTAssertEqual(blue, UIColor.blue())
-        XCTAssertEqual(magenta, UIColor.magenta())
-        XCTAssertNotEqual(red, UIColor.yellow())
+        XCTAssertEqual(red, UIColor.red)
+        XCTAssertEqual(blue, UIColor.blue)
+        XCTAssertEqual(magenta, UIColor.magenta)
+        XCTAssertNotEqual(red, UIColor.yellow)
     }
     
     // MARK: - NSURL extension test
@@ -198,13 +198,13 @@ class CodemineTests: XCTestCase {
         let widthParameterName = "width"
         
         let url2 = url.urlByAppendingAssetSize(size, mode: .Default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
-        XCTAssertEqual(url2.absoluteString, url.absoluteString! + "?\(widthParameterName)=\(Int(size.width * UIScreen.main().scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main().scale))")
+        XCTAssertEqual(url2.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.main.scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main.scale))")
         
         let url3 = url.urlByAppendingAssetSize(size)
-        XCTAssertEqual(url3.absoluteString, url.absoluteString! + "?w=\(Int(size.width * UIScreen.main().scale ))&h=\(Int(size.height *  UIScreen.main().scale))")
+        XCTAssertEqual(url3.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))")
         
         let url4 = url.urlByAppendingAssetSize(size, mode: .Crop)
-        XCTAssertEqual(url4.absoluteString, url.absoluteString! + "?w=\(Int(size.width * UIScreen.main().scale ))&h=\(Int(size.height *  UIScreen.main().scale))&mode=crop")
+        XCTAssertEqual(url4.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))&mode=crop")
 
     }
     
