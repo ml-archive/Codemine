@@ -32,8 +32,8 @@ public extension UIImage {
         
         /// The graphics context of the image.
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        CGContextSetFillColorWithColor(context!, color.CGColor)
+        CGContextFillRect(context!, rect)
         
         /// Image that will be retured.
         var image = UIGraphicsGetImageFromCurrentImageContext()
@@ -42,12 +42,12 @@ public extension UIImage {
         UIGraphicsBeginImageContext(size)
         
         UIBezierPath(roundedRect: rect, cornerRadius:cornerRadius).addClip()
-        image .drawInRect(rect)
+        image! .drawInRect(rect)
         
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
     /**
@@ -70,7 +70,7 @@ public extension UIImage {
         // Center icon
         icon.drawInRect(CGRectMake(imageOne.size.width/2 - icon.size.width/2, imageOne.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height), blendMode:CGBlendMode.Normal, alpha:1.0)
         
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         return newImage
     }
     
@@ -87,6 +87,6 @@ public extension UIImage {
         self.drawInRect(CGRect(origin: CGPointZero, size: self.size))
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        return normalizedImage;
+        return normalizedImage!;
     }
 }
