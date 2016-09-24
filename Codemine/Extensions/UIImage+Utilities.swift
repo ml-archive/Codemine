@@ -24,35 +24,37 @@ public extension UIImage {
      
      - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
-    public class func imageFromColor(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
+    public class func imageFromColor(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage? {
         
         /// The base rectangle of the image.
         let rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContext(rect.size)
         
-        /// The graphics context of the image.
-        let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context!, color.CGColor)
-        CGContextFillRect(context!, rect)
-        
-        /// Image that will be retured.
-        var image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        UIGraphicsBeginImageContext(size)
-        
-        UIBezierPath(roundedRect: rect, cornerRadius:cornerRadius).addClip()
-        image! .drawInRect(rect)
-        
-        image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image!
+		/// The graphics context of the image.
+		if let context = UIGraphicsGetCurrentContext() {
+			CGContextSetFillColorWithColor(context, color.CGColor)
+			CGContextFillRect(context, rect)
+			
+			/// Image that will be retured.
+			var image = UIGraphicsGetImageFromCurrentImageContext()
+			UIGraphicsEndImageContext()
+			
+			UIGraphicsBeginImageContext(size)
+			
+			UIBezierPath(roundedRect: rect, cornerRadius:cornerRadius).addClip()
+			image?.drawInRect(rect)
+			
+			image = UIGraphicsGetImageFromCurrentImageContext()
+			UIGraphicsEndImageContext()
+			
+			return image
+		}
+		return nil
     }
-    
+	
     /**
      Embed an icon/image on top of a background image.
-     
+	
      `imageOne` will be the background and `icon` is the image that will be on top of `imageOne`.
      The `UIImage` that is set with the parameter `icon` will be centered on `imageOne`.
      
@@ -61,7 +63,7 @@ public extension UIImage {
      - icon: The embedded image that will be on top.
      - Returns: The combined image as `UIImage`.
      */
-    public class func imageByEmbeddingIconIn(imageOne: UIImage, icon: UIImage) -> UIImage {
+    public class func imageByEmbeddingIconIn(imageOne: UIImage, icon: UIImage) -> UIImage? {
         let newSize = CGSizeMake(imageOne.size.width, imageOne.size.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
@@ -70,7 +72,7 @@ public extension UIImage {
         // Center icon
         icon.drawInRect(CGRectMake(imageOne.size.width/2 - icon.size.width/2, imageOne.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height), blendMode:CGBlendMode.Normal, alpha:1.0)
         
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
         return newImage
     }
     
@@ -80,13 +82,13 @@ public extension UIImage {
      
      - Returns: The orientation corrected image as an `UIImage`.
      */
-    public func rotationCorrectedImage() -> UIImage {
+    public func rotationCorrectedImage() -> UIImage? {
         //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
         
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         self.drawInRect(CGRect(origin: CGPointZero, size: self.size))
-        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return normalizedImage!;
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return normalizedImage
     }
 }
