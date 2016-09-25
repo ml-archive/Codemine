@@ -23,7 +23,7 @@ import Foundation
 
 public struct Application {
     
-    private static func getString(_ key: String) -> String {
+    fileprivate static func getString(_ key: String) -> String {
         guard let infoDictionary = Bundle.main.infoDictionary,
             let value = infoDictionary[key] as? String
             else { return "" }

@@ -189,25 +189,7 @@ class CodemineTests: XCTestCase {
         XCTAssertEqual(magenta, UIColor.magenta)
         XCTAssertNotEqual(red, UIColor.yellow)
     }
-    
-    // MARK: - NSURL extension test
-    func testURLWithSize() {
-        guard let url = URL(string: "https://example.com/image.png") else { XCTAssertTrue(false, "Failed to create NSURL"); return }
-        let size = CGSize(width: 512, height: 256)
-        let heightParameterName = "height"
-        let widthParameterName = "width"
         
-        let url2 = url.urlByAppendingAssetSize(size, mode: .Default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
-        XCTAssertEqual(url2.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.main.scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main.scale))")
-        
-        let url3 = url.urlByAppendingAssetSize(size)
-        XCTAssertEqual(url3.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))")
-        
-        let url4 = url.urlByAppendingAssetSize(size, mode: .Crop)
-        XCTAssertEqual(url4.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))&mode=crop")
-
-    }
-    
     func testError() {
         let domain = "Domain"
         let code = 123

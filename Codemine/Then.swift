@@ -25,7 +25,7 @@ import Foundation
 public protocol Then {}
 extension Then {
     
-    public func then( _ block: @noescape (Self) -> Void) -> Self {
+    public func then( _ block: (Self) -> Void) -> Self {
         block(self)
         return self
     }
