@@ -24,7 +24,7 @@ public extension UIImage {
      
      - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
-    public class func imageFromColor(_ color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage? {
+    public class func from(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage? {
         
         /// The base rectangle of the image.
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -53,22 +53,22 @@ public extension UIImage {
     /**
      Embed an icon/image on top of a background image.
      
-     `imageOne` will be the background and `icon` is the image that will be on top of `imageOne`.
-     The `UIImage` that is set with the parameter `icon` will be centered on `imageOne`.
+     `image` will be the background and `icon` is the image that will be on top of `image`.
+     The `UIImage` that is set with the parameter `icon` will be centered on `image`.
      
      - Parameters:
-     - imageOne: The background image.
-     - icon: The embedded image that will be on top.
+	 - icon: The embedded image that will be on top.
+     - image: The background image.
      - Returns: The combined image as `UIImage`.
      */
-    public class func imageByEmbeddingIconIn(_ imageOne: UIImage, icon: UIImage) -> UIImage? {
-        let newSize = CGSize(width: imageOne.size.width, height: imageOne.size.height)
+    public class func embed(icon: UIImage, inImage image: UIImage ) -> UIImage? {
+        let newSize = CGSize(width: image.size.width, height: image.size.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
-        imageOne.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
+        image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
         
         // Center icon
-        icon.draw(in: CGRect(x: imageOne.size.width/2 - icon.size.width/2, y: imageOne.size.height/2 - icon.size.height/2, width: icon.size.width, height: icon.size.height), blendMode:CGBlendMode.normal, alpha:1.0)
+        icon.draw(in: CGRect(x: image.size.width/2 - icon.size.width/2, y: image.size.height/2 - icon.size.height/2, width: icon.size.width, height: icon.size.height), blendMode:CGBlendMode.normal, alpha:1.0)
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         return newImage
@@ -80,7 +80,7 @@ public extension UIImage {
      
      - Returns: The orientation corrected image as an `UIImage`.
      */
-    public func rotationCorrectedImage() -> UIImage? {
+	public var rotationCorrected: UIImage? {
         //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)

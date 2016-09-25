@@ -23,15 +23,15 @@ class UIImageTests: XCTestCase {
 	}
 	
 	func testUIImageFromColor() {
-		XCTAssertNotNil(UIImage.imageFromColor(.red, size: CGSize(width: 20, height: 20), cornerRadius: 1.0), "Failed to convert color to image")
+		XCTAssertNotNil(UIImage.from(color: .red, size: CGSize(width: 20, height: 20), cornerRadius: 1.0), "Failed to convert color to image")
 	}
 	
 	func testImageImbed() {
-		XCTAssertNotNil(UIImage.imageByEmbeddingIconIn(testImageNamed(name: "add"),	icon: testImageNamed(name: "alert")), "Failed to embed image")
+		XCTAssertNotNil(UIImage.embed(icon: testImageNamed(name: "alert"), inImage: testImageNamed(name: "add")), "Failed to embed image")
 	}
 	
 	func testImageRotation() {
-		XCTAssertNotNil(testImageNamed(name: "add").rotationCorrectedImage(), "Failed to rotate image")
+		XCTAssertNotNil(testImageNamed(name: "add").rotationCorrected, "Failed to rotate image")
 	}
 	
 }
