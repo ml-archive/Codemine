@@ -41,8 +41,8 @@ public extension URL {
      - widthParameterName: the name of the width paramter. Default is 'h'
      - Returns: `URL` as a `NSURL`.
      */
-    public func urlByAppendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL {
-        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return self }
+    public func urlByAppendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
         
         var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
         queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main.scale ))"))
@@ -51,6 +51,6 @@ public extension URL {
             queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }
         urlComponents.queryItems = queryItems
-        return urlComponents.url ?? self
+        return urlComponents.url
     }
 }
