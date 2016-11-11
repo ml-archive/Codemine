@@ -191,10 +191,18 @@ let UIView().then {
 }
 ```
 
+### DispatchTime
+
+```
+DispatchQueue.main.asyncAfter(deadline: 5) { /* ... */ }
+```
+
 ## 👥 Credits
 Made with ❤️ at [Nodes](http://nodesagency.com). 
 
-Some functions & tweaks were borrowed from Hyper's [Sugar](https://github.com/hyperoslo/Sugar) 🙈.
+`Application` and `Then` were borrowed from Hyper's [Sugar](https://github.com/hyperoslo/Sugar) 🙈.
+
+The `DispatchTime` extensions are [Russ Bishop's idea](http://www.russbishop.net/quick-easy-dispatchtime) 🙈.
 
 ## 📄 License
 **Codemine** is available under the MIT license. See the [LICENSE](https://github.com/nodes-ios/Codemine/blob/master/LICENSE) file for more info.
