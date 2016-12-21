@@ -24,7 +24,9 @@ public extension UIImage {
      
      - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
-    public class func from(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage? {
+    
+    convenience init(color: UIColor, size: CGSize, cornerRadius: CGFloat) {
+        self.init()
         
         /// The base rectangle of the image.
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -47,8 +49,8 @@ public extension UIImage {
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
     }
+    
     
     /**
      Embed an icon/image on top of a background image.

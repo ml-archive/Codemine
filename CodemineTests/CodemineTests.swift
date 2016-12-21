@@ -51,16 +51,16 @@ class CodemineTests: XCTestCase {
     
     func testRange() {
         let str = "Hello world!"
-		let range = str.rangeFrom(string: "e", toString: " w")
+		let range = str.range(from: "e", toString: " w")
         XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
-        XCTAssertNil(str.rangeFrom(string: "a", toString: "e"))
-        XCTAssertNil(str.rangeFrom(string: "e", toString: "b"))
+        XCTAssertNil(str.range(from: "a", toString: "e"))
+        XCTAssertNil(str.range(from: "e", toString: "b"))
 		
-        XCTAssertNil(str.rangeFrom(string: "l", toString: "o", searchType: .rightToLeft, inRange: range))
+        XCTAssertNil(str.range(from: "l", toString: "o", searchType: .rightToLeft, inRange: range))
         
         let str2 = "abcdefghijklmnopqrstuvwxyz"
-        let range2 = str2.rangeFrom(string: "x", toString: "z")
-        XCTAssertNil(str.rangeFrom(string: "h", toString: "e", searchType: .leftToRight, inRange: range2))
+        let range2 = str2.range(from: "x", toString: "z")
+        XCTAssertNil(str.range(from: "h", toString: "e", searchType: .leftToRight, inRange: range2))
         
         
     }
@@ -96,7 +96,7 @@ class CodemineTests: XCTestCase {
     
     func testReversingSize() {
         let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
-        let reversedRect = rect.reversedSize
+        let reversedRect = rect.reversingSize
         XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
     }
     

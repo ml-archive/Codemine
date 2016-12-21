@@ -42,11 +42,11 @@ public extension String {
      
      - returns: the range between the start of the first substring and the end of the last substring
      */
-    public func rangeFrom(string: String, toString: String, searchType: RangeSearchType = .leftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
+    public func range(from fromString: String, toString: String, searchType: RangeSearchType = .leftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
         let range = inRange ?? Range(uncheckedBounds: (lower: self.startIndex, upper: self.endIndex))
         if !contains(range) { return nil }
         
-        guard let firstRange = self.range(of: string, options: NSString.CompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
+        guard let firstRange = self.range(of: fromString, options: NSString.CompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
         guard let secondRange = self.range(of: toString, options: NSString.CompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
         
         switch searchType {

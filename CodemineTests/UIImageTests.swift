@@ -23,7 +23,7 @@ class UIImageTests: XCTestCase {
 	}
 	
 	func testUIImageFromColor() {
-		XCTAssertNotNil(UIImage.from(color: .red, size: CGSize(width: 20, height: 20), cornerRadius: 1.0), "Failed to convert color to image")
+		XCTAssertNotNil(UIImage(color: .red, size: CGSize(width: 20, height: 20), cornerRadius: 1.0), "Failed to convert color to image")
 	}
 	
 	func testImageImbed() {

@@ -17,8 +17,8 @@ public extension UIView {
      - Parameter name: The name that the UIView will get as its `name` assigned as a `String`.
      - Returns: `Generics type`.
      */
-    public static func fromNib<T>(_ name:String) -> T? {
-        let view = UINib(nibName: name, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
+    public static func from<T>(nibWithName:String) -> T? {
+        let view = UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
         return view
     }
     
