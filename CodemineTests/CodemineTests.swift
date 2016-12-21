@@ -38,29 +38,29 @@ class CodemineTests: XCTestCase {
     func testTrueEmailAddress() {
         let validEmails = ["TeSt@TesT.COM", "Test@test.com", "email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
         for emailAddress in validEmails {
-            XCTAssertTrue(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered invalid, but it is not")
+            XCTAssertTrue(emailAddress.isValidEmailAddress, "the email address: \(emailAddress) was considered invalid, but it is not")
         }
     }
     
     func testFalseEmailAddress() {
         let invalidEmails = ["plainaddress", "#@%^%#$@#$@#.com", "@example.com", "Joe Smith <email@example.com>", "email.example.com", "email@example@example.com", ".email@example.com", "email.@example.com", "email..email@example.com", "あいうえお@example.com", "email@example.com (Joe Smith)", "email@example", "email@-example.com", "email@example..com", "Abc..123@example.com"]
         for emailAddress in invalidEmails {
-            XCTAssertFalse(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered valid, but it is not")
+            XCTAssertFalse(emailAddress.isValidEmailAddress, "the email address: \(emailAddress) was considered valid, but it is not")
         }
     }
     
     func testRange() {
         let str = "Hello world!"
-        let range = str.rangeFromString("e", toString: " w")
+		let range = str.range(from: "e", toString: " w")
         XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
-        XCTAssertNil(str.rangeFromString("a", toString: "e"))
-        XCTAssertNil(str.rangeFromString("e", toString: "b"))
-        
-        XCTAssertNil(str.rangeFromString("l", toString: "o", searchType: .rightToLeft, inRange: range))
+        XCTAssertNil(str.range(from: "a", toString: "e"))
+        XCTAssertNil(str.range(from: "e", toString: "b"))
+		
+        XCTAssertNil(str.range(from: "l", toString: "o", searchType: .rightToLeft, inRange: range))
         
         let str2 = "abcdefghijklmnopqrstuvwxyz"
-        let range2 = str2.rangeFromString("x", toString: "z")
-        XCTAssertNil(str.rangeFromString("h", toString: "e", searchType: .leftToRight, inRange: range2))
+        let range2 = str2.range(from: "x", toString: "z")
+        XCTAssertNil(str.range(from: "h", toString: "e", searchType: .leftToRight, inRange: range2))
         
         
     }
@@ -96,7 +96,7 @@ class CodemineTests: XCTestCase {
     
     func testReversingSize() {
         let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
-        let reversedRect = rect.rectByReversingSize()
+        let reversedRect = rect.reversingSize
         XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
     }
     

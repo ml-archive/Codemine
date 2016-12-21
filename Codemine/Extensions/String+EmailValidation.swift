@@ -16,7 +16,7 @@ public extension String {
      
      - returns: true is the current string is a valid email address, false otherwise
      */
-    public func isValidEmailAddress() -> Bool {
+	public var isValidEmailAddress: Bool {
         
         let emailRegex = "\\A[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\z"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
