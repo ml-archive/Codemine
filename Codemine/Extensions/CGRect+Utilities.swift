@@ -36,6 +36,6 @@ public extension CGRect {
      - returns: a new CGRect with the width and height reversed to those of the current one
      */
 	public var reversingSize: CGRect {
-        return CGRect(origin: self.origin, size: CGSize(width: self.height, height: self.width))
+        return CGRect(origin: origin, size: CGSize(width: height, height: width))
     }
 }

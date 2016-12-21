@@ -83,7 +83,6 @@ public extension UIImage {
      - Returns: The orientation corrected image as an `UIImage`.
      */
 	public var rotationCorrected: UIImage? {
-        //        if (self.imageOrientation == UIImageOrientation.Up) { return self }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         self.draw(in: CGRect(origin: CGPoint.zero, size: self.size))

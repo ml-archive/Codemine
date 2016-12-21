@@ -23,7 +23,7 @@ class URLImageAssetSizeTests: XCTestCase {
 		let heightParameterName = "height"
 		let widthParameterName = "width"
 		
-		let url2 = url.appendedAssetSize(size, mode: .standard, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
+		let url2 = url.appendedAssetSize(size, mode: .default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
 		XCTAssertEqual(url2?.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.main.scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main.scale))")
 		
 		let url3 = url.appendedAssetSize(size)
