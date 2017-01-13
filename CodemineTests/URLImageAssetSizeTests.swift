@@ -23,13 +23,13 @@ class URLImageAssetSizeTests: XCTestCase {
 		let heightParameterName = "height"
 		let widthParameterName = "width"
 		
-		let url2 = url.appendedAssetSize(size, mode: .default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
+		let url2 = url.appendingAssetSize(size, mode: .default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
 		XCTAssertEqual(url2?.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.main.scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main.scale))")
 		
-		let url3 = url.appendedAssetSize(size)
+		let url3 = url.appendingAssetSize(size)
 		XCTAssertEqual(url3?.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))")
 		
-		let url4 = url.appendedAssetSize(size, mode: .crop)
+		let url4 = url.appendingAssetSize(size, mode: .crop)
 		XCTAssertEqual(url4?.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))&mode=crop")
 		
 	}
@@ -39,7 +39,7 @@ class URLImageAssetSizeTests: XCTestCase {
 		
 		print(URLComponents(url: url, resolvingAgainstBaseURL: false))
 		
-		let newUrl = url.appendedAssetSize(CGSize(width: 10, height: 10))
+		let newUrl = url.appendingAssetSize(CGSize(width: 10, height: 10))
 		XCTAssertNil(newUrl?.absoluteString, "Bad URL did not return nil")
 	}
 	

@@ -26,7 +26,7 @@ class UIImageTests: XCTestCase {
 		XCTAssertNotNil(UIImage(color: .red, size: CGSize(width: 20, height: 20), cornerRadius: 1.0), "Failed to convert color to image")
 	}
 	
-	func testImageImbed() {
+	func testImageEmbed() {
 		XCTAssertNotNil(UIImage.embed(icon: testImageNamed(name: "alert"), inImage: testImageNamed(name: "add")), "Failed to embed image")
 	}
 	
