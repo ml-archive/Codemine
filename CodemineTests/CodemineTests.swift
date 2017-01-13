@@ -28,7 +28,7 @@ class CodemineTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
@@ -38,29 +38,29 @@ class CodemineTests: XCTestCase {
     func testTrueEmailAddress() {
         let validEmails = ["TeSt@TesT.COM", "Test@test.com", "email@example.com", "firstname.lastname@example.com", "email@subdomain.example.com", "firstname+lastname@example.com", "1234567890@example.com", "email@example-one.com", "_______@example.com", "email@example.name", "email@example.museum", "email@example.co.jp", "firstname-lastname@example.com"]
         for emailAddress in validEmails {
-            XCTAssertTrue(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered invalid, but it is not")
+            XCTAssertTrue(emailAddress.isValidEmailAddress, "the email address: \(emailAddress) was considered invalid, but it is not")
         }
     }
     
     func testFalseEmailAddress() {
         let invalidEmails = ["plainaddress", "#@%^%#$@#$@#.com", "@example.com", "Joe Smith <email@example.com>", "email.example.com", "email@example@example.com", ".email@example.com", "email.@example.com", "email..email@example.com", "あいうえお@example.com", "email@example.com (Joe Smith)", "email@example", "email@-example.com", "email@example..com", "Abc..123@example.com"]
         for emailAddress in invalidEmails {
-            XCTAssertFalse(emailAddress.isValidEmailAddress(), "the email address: \(emailAddress) was considered valid, but it is not")
+            XCTAssertFalse(emailAddress.isValidEmailAddress, "the email address: \(emailAddress) was considered valid, but it is not")
         }
     }
     
     func testRange() {
         let str = "Hello world!"
-        let range = str.rangeFromString("e", toString: " w")
-        XCTAssertTrue(range?.startIndex == str.startIndex.advancedBy(1) && range?.endIndex == str.startIndex.advancedBy(7), "range = \(range)")
-        XCTAssertNil(str.rangeFromString("a", toString: "e"))
-        XCTAssertNil(str.rangeFromString("e", toString: "b"))
-        
-        XCTAssertNil(str.rangeFromString("l", toString: "o", searchType: .RightToLeft, inRange: range))
+		let range = str.range(from: "e", toString: " w")
+        XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
+        XCTAssertNil(str.range(from: "a", toString: "e"))
+        XCTAssertNil(str.range(from: "e", toString: "b"))
+		
+        XCTAssertNil(str.range(from: "l", toString: "o", searchType: .rightToLeft, inRange: range))
         
         let str2 = "abcdefghijklmnopqrstuvwxyz"
-        let range2 = str2.rangeFromString("x", toString: "z")
-        XCTAssertNil(str.rangeFromString("h", toString: "e", searchType: .LeftToRight, inRange: range2))
+        let range2 = str2.range(from: "x", toString: "z")
+        XCTAssertNil(str.range(from: "h", toString: "e", searchType: .leftToRight, inRange: range2))
         
         
     }
@@ -96,7 +96,7 @@ class CodemineTests: XCTestCase {
     
     func testReversingSize() {
         let rect = CGRect(x: 10, y: 10, width: 100, height: 200)
-        let reversedRect = rect.rectByReversingSize()
+        let reversedRect = rect.reversingSize
         XCTAssertTrue(rect.size.height == reversedRect.size.width && rect.size.width == reversedRect.size.height)
     }
     
@@ -170,12 +170,12 @@ class CodemineTests: XCTestCase {
     // MARK: - Then test
     func testThen() {
         let view = UIView().then {
-            $0.backgroundColor = UIColor.blackColor()
+            $0.backgroundColor = UIColor.black
             $0.alpha = 0.5
         }
         
         XCTAssertEqual(view.alpha, 0.5)
-        XCTAssertEqual(view.backgroundColor, UIColor.blackColor())
+        XCTAssertEqual(view.backgroundColor, UIColor.black)
     }
     
     // MARK: - UIColor extension test
@@ -184,30 +184,12 @@ class CodemineTests: XCTestCase {
         let blue = UIColor(rgb: 0x0000FF)
         let magenta = UIColor(rgb: 0xFF00FF)
         
-        XCTAssertEqual(red, UIColor.redColor())
-        XCTAssertEqual(blue, UIColor.blueColor())
-        XCTAssertEqual(magenta, UIColor.magentaColor())
-        XCTAssertNotEqual(red, UIColor.yellowColor())
+        XCTAssertEqual(red, UIColor.red)
+        XCTAssertEqual(blue, UIColor.blue)
+        XCTAssertEqual(magenta, UIColor.magenta)
+        XCTAssertNotEqual(red, UIColor.yellow)
     }
-    
-    // MARK: - NSURL extension test
-    func testURLWithSize() {
-        guard let url = NSURL(string: "https://example.com/image.png") else { XCTAssertTrue(false, "Failed to create NSURL"); return }
-        let size = CGSize(width: 512, height: 256)
-        let heightParameterName = "height"
-        let widthParameterName = "width"
         
-        let url2 = url.urlByAppendingAssetSize(size, mode: .Default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
-        XCTAssertEqual(url2.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.mainScreen().scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.mainScreen().scale))")
-        
-        let url3 = url.urlByAppendingAssetSize(size)
-        XCTAssertEqual(url3.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.mainScreen().scale ))&h=\(Int(size.height *  UIScreen.mainScreen().scale))")
-        
-        let url4 = url.urlByAppendingAssetSize(size, mode: .Crop)
-        XCTAssertEqual(url4.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.mainScreen().scale ))&h=\(Int(size.height *  UIScreen.mainScreen().scale))&mode=crop")
-
-    }
-    
     func testError() {
         let domain = "Domain"
         let code = 123

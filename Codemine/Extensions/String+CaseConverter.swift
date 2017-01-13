@@ -20,7 +20,7 @@ public extension String {
         
         let characterArray = Array(returnString.characters).map { (character) -> String in
             let inputCharacterString = String(character)
-            let lowerCaseCharacterString = String(character).lowercaseString
+            let lowerCaseCharacterString = String(character).lowercased()
             
             if inputCharacterString != lowerCaseCharacterString {
                 return "_" + lowerCaseCharacterString

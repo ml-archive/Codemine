@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-public extension NSURL {
+public extension URL {
     /**
      Mode for image urls.
      It defines in which mode an image will be provided.
@@ -21,15 +21,15 @@ public extension NSURL {
      - Fit: Resizes the image to fit within the width and height boundaries without cropping or distorting the image.
      The resulting image is assured to match one of the constraining dimensions,
      while the other dimension is altered to maintain the same aspect ratio of the input image.
-     - Default: Default/normal image mode. No changes to the ratio.
+     - Standard: Default/normal image mode. No changes to the ratio.
      */
     public enum ImageUrlMode : String {
-        case Resize = "resize"
-        case Crop   = "crop"
-        case Fit    = "fit"
-        case Default = "default"
+		case resize		= "resize"
+		case crop		= "crop"
+		case fit		= "fit"
+		case `default`	= "default"
     }
-    
+	
     /**
      Adds height, width and mode paramters to an url. To be used when fetching an image from a CDN, for example.
      Choose the `size` and the `mode` for the image url to define how an image will be provided from the backend.
@@ -41,16 +41,16 @@ public extension NSURL {
      - widthParameterName: the name of the width paramter. Default is 'h'
      - Returns: `URL` as a `NSURL`.
      */
-    public func urlByAppendingAssetSize(size: CGSize, mode: ImageUrlMode = .Default, heightParameterName : String = "h", widthParameterName : String = "w") -> NSURL {
-        guard let urlComponents = NSURLComponents(URL: self, resolvingAgainstBaseURL: false) else { return self }
+    public func appendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
         
-        var queryItems:[NSURLQueryItem] = urlComponents.queryItems ?? []
-        queryItems.append(NSURLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.mainScreen().scale ))"))
-        queryItems.append(NSURLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.mainScreen().scale ))"))
-        if mode != .Default {
-            queryItems.append(NSURLQueryItem(name: "mode", value: mode.rawValue))
+        var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
+        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main.scale ))"))
+        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main.scale ))"))
+        if mode != .default {
+            queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }
         urlComponents.queryItems = queryItems
-        return urlComponents.URL ?? self
+        return urlComponents.url
     }
 }

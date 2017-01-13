@@ -10,9 +10,6 @@ import Foundation
 
 
 public extension String {
-    private var range: Range<Index> {
-        return Range(self.startIndex..<self.endIndex)
-    }
     /**
      Checks if a range appears in a String.
      
@@ -20,8 +17,8 @@ public extension String {
      
      - returns: true if the string contains that range, false otherwise
      */
-    private func containsRange(range: Range<Index>) -> Bool {
-        if range.startIndex < self.startIndex || range.endIndex > self.endIndex {
+    private func contains(_ range: Range<Index>) -> Bool {
+        if range.lowerBound < self.startIndex || range.upperBound > self.endIndex {
             return false
         }
         
@@ -29,10 +26,10 @@ public extension String {
     }
     
     public enum RangeSearchType: Int {
-        case LeftToRight
-        case RightToLeft
-        case Broadest
-        case Narrowest
+        case leftToRight
+        case rightToLeft
+        case broadest
+        case narrowest
     }
     
     /**
@@ -45,16 +42,16 @@ public extension String {
      
      - returns: the range between the start of the first substring and the end of the last substring
      */
-    public func rangeFromString(string: String, toString: String, searchType: RangeSearchType = .LeftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
-        let range = inRange ?? self.range
-        if !containsRange(range) { return nil }
+    public func range(from fromString: String, toString: String, searchType: RangeSearchType = .leftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
+        let range = inRange ?? Range(uncheckedBounds: (lower: self.startIndex, upper: self.endIndex))
+        if !contains(range) { return nil }
         
-        guard let firstRange = self.rangeOfString(string, options: NSStringCompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
-        guard let secondRange = self.rangeOfString(toString, options: NSStringCompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
+        guard let firstRange = self.range(of: fromString, options: NSString.CompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
+        guard let secondRange = self.range(of: toString, options: NSString.CompareOptions(rawValue: 0), range: range, locale: nil) else { return nil }
         
         switch searchType {
-        case .LeftToRight:
-            return Range(firstRange.startIndex..<secondRange.endIndex)
+        case .leftToRight:
+            return Range(firstRange.lowerBound..<secondRange.upperBound)
         default:
             print("Other search options not yet implemented.")
         }
