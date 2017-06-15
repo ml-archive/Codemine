@@ -52,7 +52,7 @@ class CodemineTests: XCTestCase {
     func testRange() {
         let str = "Hello world!"
 		let range = str.range(from: "e", toString: " w")
-        XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
+        XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(String(describing: range))")
         XCTAssertNil(str.range(from: "a", toString: "e"))
         XCTAssertNil(str.range(from: "e", toString: "b"))
 		

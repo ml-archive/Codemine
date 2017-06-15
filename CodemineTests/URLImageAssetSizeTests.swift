@@ -37,8 +37,6 @@ class URLImageAssetSizeTests: XCTestCase {
 	func testBadUrl() {
 		let url = URL(string: "http://example.com:-80/")!
 		
-		print(URLComponents(url: url, resolvingAgainstBaseURL: false))
-		
 		let newUrl = url.appendingAssetSize(CGSize(width: 10, height: 10))
 		XCTAssertNil(newUrl?.absoluteString, "Bad URL did not return nil")
 	}
