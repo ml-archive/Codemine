@@ -8,16 +8,7 @@
 
 import UIKit
 
-private func htmlLabel(withText text: String) -> UILabel {
-    let label = UILabel()
-    label.numberOfLines = 0
-    label.lineBreakMode = .byWordWrapping
-    label.attributedText = stringFromHtml(string: text)
-
-    return label
-}
-
-private func stringFromHtml(string: String) -> NSAttributedString? {
+public func stringFromHtml(string: String) -> NSAttributedString? {
     do {
         let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
         if let d = data {
@@ -27,8 +18,18 @@ private func stringFromHtml(string: String) -> NSAttributedString? {
             return str
         }
     } catch {
+        print(error)
     }
     return nil
+}
+
+extension UILabel {
+    public convenience init(htmlString: String) {
+        self.init()
+        numberOfLines = 0
+        lineBreakMode = .byWordWrapping
+        attributedText = htmlString.attributedHTMLString
+    }
 }
 
 extension String {
