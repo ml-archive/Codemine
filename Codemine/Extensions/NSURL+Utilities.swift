@@ -1,5 +1,5 @@
 //
-//  NSURL+AssetSize.swift
+//  NSURL+Utilities.swift
 //  Codemine
 //
 //  Created by Marius Constantinescu on 18/02/16.
@@ -53,4 +53,20 @@ public extension URL {
         urlComponents.queryItems = queryItems
         return urlComponents.url
     }
+
+    /**
+        Finds the first value for a URL parameter in a `URL`
+        - Parameters:
+        - name: the URL parameter to look for
+        - Returns: the first value found for `name` or nil if no value was found
+     */
+    public func value(forParameter name: String) -> String? {
+        guard let urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true),
+            let queryItems = urlComponents.queryItems else {
+                return nil
+        }
+        let items = queryItems.filter({ $0.name == name })
+        return items.first?.value
+    }
+ 
 }
