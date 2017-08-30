@@ -18,10 +18,10 @@ public extension UIView {
      - Returns: `Generics type`.
      */
     public static func from<T>(nibWithName:String) -> T? {
-        let view = UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
-        return view
+        return UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
     }
-    
+
+
     /**
      Rounded corners for a `UIView`.
      
@@ -37,4 +37,18 @@ public extension UIView {
     }
 }
 
+/**
+ Create a UIView from a nib with a matching name
+
+ - Returns: a view of type Self.
+ */
+extension NibInitializable where Self: UIView {
+    public static func fromNib() -> Self {
+        return UINib(nibName:nibName, bundle: nil).instantiate(withOwner: nil, options: nil).first as! Self
+    }
+}
+
+extension UIView: NibInitializable {
+    public static var nibName: String { return "\(self)" }
+}
 
