@@ -26,8 +26,8 @@ public extension UIView {
      Rounded corners for a `UIView`.
      
      - Parameters:
-     - corners: Defines which corners should be rounded.
-     - radius: Defines the radius of the round corners as a `CGFloat`.
+        - corners: Defines which corners should be rounded.
+        - radius: Defines the radius of the round corners as a `CGFloat`.
      */
     public func roundViewCorners(_ corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
