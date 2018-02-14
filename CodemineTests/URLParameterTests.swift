@@ -80,13 +80,21 @@ class URLParameterTests: XCTestCase {
             return
         }
         
-        guard let queryParamUrl = url.append(queryParameters: ["param1" : "value1", "param2" : "value2"]) else {
+        let expectedValue1 = "value1"
+        let expectedValue2 = "value2"
+        
+        guard let queryParamUrl = url.append(queryParameters: ["param1" : expectedValue1, "param2" : expectedValue2]) else {
             XCTFail("could not create queryParamUrl")
             return
         }
         
+        //Are they even there?
         XCTAssertNotNil(queryParamUrl.value(forParameter: "param1"))
         XCTAssertNotNil(queryParamUrl.value(forParameter: "param2"))
+        
+        //They were, but do they match then?
+        XCTAssertTrue(queryParamUrl.value(forParameter: "param1")! == expectedValue1)
+        XCTAssertTrue(queryParamUrl.value(forParameter: "param2")! == expectedValue2)
 
     }
     
