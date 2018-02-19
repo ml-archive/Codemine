@@ -198,4 +198,19 @@ class CodemineTests: XCTestCase {
         let error2 = NSError(domain: domain, code: code, userInfo: [NSLocalizedDescriptionKey : description])
         XCTAssertEqual(error, error2)
     }
+
+    // MARK: - XCTestCase extension test
+    func testThrowsSpecificError() {
+        //Sample types
+        enum MyError: Error {
+            case specificError
+        }
+
+        func throwIt() throws {
+            throw MyError.specificError
+        }
+
+        //Actually test
+        XCTAssertThrows(try throwIt(), specificError: MyError.specificError)
+    }
 }

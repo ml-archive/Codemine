@@ -20,6 +20,19 @@ Codemine is a collection of extensions containing useful functions and syntactic
 
 ## 📦 Installation
 
+### CocoaPods
+
+If you are using CocoaPods add this text to your Podfile and run `pod install`.
+~~~
+pod 'Codemine', '~>1.0.0'
+
+# Swift 2.3
+pod 'Codemine', '~>0.2.5'
+
+# Swift 2.2
+pod 'Codemine', '~>0.2.2'
+~~~
+
 ### Carthage
 ~~~
 github "nodes-ios/Codemine" ~> 1.0
@@ -105,7 +118,7 @@ This method appends the `size` multiplied by `UIScreen.main.scale` to an asset u
 ```swift
 let camelCaseStr1 = "userId"
 let camelCaseStr2 = "isUserActiveMemberOfCurrentGroup"
-        
+
 print(camelCaseStr1.camelCaseToUnderscore())	// "user_id"
 print(camelCaseStr2.camelCaseToUnderscore())	// "is_user_active_member_of_current_group"
 ```
@@ -164,7 +177,7 @@ DispatchQueue.main.asyncAfter(deadline: 5) { /* ... */ }
 ```
 
 ## 👥 Credits
-Made with ❤️ at [Nodes](http://nodesagency.com). 
+Made with ❤️ at [Nodes](http://nodesagency.com).
 
 `Application` and `Then` were borrowed from Hyper's [Sugar](https://github.com/hyperoslo/Sugar) 🙈.
 
