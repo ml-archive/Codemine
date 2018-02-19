@@ -34,12 +34,12 @@ public extension URL {
      Adds height, width and mode paramters to an url. To be used when fetching an image from a CDN, for example.
      Choose the `size` and the `mode` for the image url to define how an image will be provided from the backend.
      
-     - Parameters:
-     - size: Set `size` as `CGSize` to define the size of the image that will be provided.
-     - mode: Select a mode from predefined `ImageUrlMode` to set up a mode and define how an image will be provided.
-     - heightParameterName: the name of the height paramter. Default is 'h'
-     - widthParameterName: the name of the width paramter. Default is 'h'
-     - Returns: `URL` as a `NSURL`.
+     - parameters:
+        - size: Set `size` as `CGSize` to define the size of the image that will be provided.
+        - mode: Select a mode from predefined `ImageUrlMode` to set up a mode and define how an image will be provided.
+        - heightParameterName: the name of the height paramter. Default is 'h'
+        - widthParameterName: the name of the width paramter. Default is 'h'
+     - returns: `URL` as a `NSURL`.
      */
     public func appendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
         guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
@@ -55,10 +55,10 @@ public extension URL {
     }
 
     /**
-        Finds the first value for a URL parameter in a `URL`
-        - Parameters:
+     Finds the first value for a URL parameter in a `URL`
+     - parameters:
         - name: the URL parameter to look for
-        - Returns: the first value found for `name` or nil if no value was found
+     - returns: the first value found for `name` or nil if no value was found
      */
     public func value(forParameter name: String) -> String? {
         guard let urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true),
@@ -68,5 +68,22 @@ public extension URL {
         let items = queryItems.filter({ $0.name == name })
         return items.first?.value
     }
- 
+    
+    /**
+     Appends queryParameters to a `URL`
+     - parameters:
+        - queryParameters: a `String` : `String` dictionary containing the queryParameters to append
+     - returns: a new `URL` instance with the appended queryParameters or nil if the appending failed
+     */
+    public func append(queryParameters: [String: String]) -> URL? {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
+            return nil
+        }
+        
+        let urlQueryItems = queryParameters.map{
+            return URLQueryItem(name: $0, value: $1)
+        }
+        urlComponents.queryItems = urlQueryItems
+        return urlComponents.url
+    }
 }

@@ -16,8 +16,8 @@ public extension CGPoint {
      If the actual point is close to the `point` from the parameter it will return true.
      
      - Parameters:
-     - point: The `CGPoint` that will be checked if it is close to the actual `CGPoint`.
-     - tolerance: Defines what range is tolerated to be close to the other `point`.
+        - point: The `CGPoint` that will be checked if it is close to the actual `CGPoint`.
+        - tolerance: Defines what range is tolerated to be close to the other `point`.
      
      - Returns: `Boolean` - if close to return true, else false.
      */
