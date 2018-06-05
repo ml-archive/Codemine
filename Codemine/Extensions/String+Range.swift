@@ -51,7 +51,7 @@ public extension String {
         
         switch searchType {
         case .leftToRight:
-            return Range(firstRange.lowerBound..<secondRange.upperBound)
+             return firstRange.lowerBound..<secondRange.upperBound
         default:
             print("Other search options not yet implemented.")
         }
