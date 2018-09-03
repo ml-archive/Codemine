@@ -1,6 +1,5 @@
 # Codemine
 
-[![Travis](https://img.shields.io/travis/nodes-ios/Codemine.svg)](https://travis-ci.org/nodes-ios/Codemine)
 [![CircleCI](https://circleci.com/gh/nodes-ios/Codemine.svg?style=shield)](https://circleci.com/gh/nodes-ios/Codemine)
 [![Codecov](https://img.shields.io/codecov/c/github/nodes-ios/Codemine.svg)](https://codecov.io/github/nodes-ios/Codemine)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Codemine.svg)](https://cocoapods.org/pods/Codemine)
