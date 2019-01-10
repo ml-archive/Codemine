@@ -87,25 +87,22 @@ public extension URL {
         return urlComponents.url
     }
     
-    /**
-     Changes a value for a queryParameter in a given URL
-     - parameters:
-     - url: The `URL` that you want to change a queryParemeter in
-     - withName: The `String` representation of the name of the queryParameter you want to change the value of
-     - toValue: The `String` representation of the new value for the queryParameter
-     - returns: a new `URL` instance with the changed queryParameters or nil if the change failed
-     */
-    public func changeQueryParamValue(for url: URL, withName: String, toValue: String) -> URL? {
-        var internalUrl = url
-        if let _ = internalUrl.value(forParameter: withName) {
+    /// Changes a value for a queryParameter in a given URL
+    ///
+    /// - Parameters:
+    ///   - url: The `URL` that you want to change a queryParemeter in
+    ///   - withName: The `String` representation of the name of the queryParameter you want to change the value of
+    ///   - toValue: The `String` representation of the new value for the queryParameter
+    /// - Returns: A new `URL` instance with the changed queryParameters or nil if the change failed
+    public func changeQueryParamValue(withName param: String, toValue newValue: String) -> URL? {
+        var internalUrl = self
+        if internalUrl.value(forParameter: param) != nil {
             if
-                var component = URLComponents(url: url, resolvingAgainstBaseURL: false),
+                var component = URLComponents(url: internalUrl, resolvingAgainstBaseURL: false),
                 var queryItems = component.queryItems,
-                var firstParam = component.queryItems?.filter({$0.name == withName}).first,
-                let index = queryItems.index(of: firstParam)
+                let index = queryItems.firstIndex(where: {$0.name == param})
             {
-                firstParam.value = toValue
-                queryItems[index]  = firstParam
+                queryItems[index].value = newValue
                 component.queryItems = queryItems
                 
                 if let urlToReturn = component.url {
@@ -116,4 +113,5 @@ public extension URL {
         }
         return nil
     }
+    
 }
