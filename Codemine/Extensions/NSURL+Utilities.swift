@@ -93,22 +93,19 @@ public extension URL {
     ///   - url: The `URL` that you want to change a queryParemeter in
     ///   - withName: The `String` representation of the name of the queryParameter you want to change the value of
     ///   - toValue: The `String` representation of the new value for the queryParameter
-    /// - Returns: A new `URL` instance with the changed queryParameters or nil if the change failed
-    public func changeQueryParamValue(withName param: String, toValue newValue: String) -> URL? {
-        var internalUrl = self
-        if internalUrl.value(forParameter: param) != nil {
+    /// - Returns: A new `URL` instance with a changed queryParameter value, for the first param that matches the input, or nil if the change failed
+    public func changeQueryParamValue(withName param: String, to newValue: String) -> URL? {
+
+        if self.value(forParameter: param) != nil {
             if
-                var component = URLComponents(url: internalUrl, resolvingAgainstBaseURL: false),
+                var component = URLComponents(url: self, resolvingAgainstBaseURL: false),
                 var queryItems = component.queryItems,
                 let index = queryItems.firstIndex(where: {$0.name == param})
             {
                 queryItems[index].value = newValue
                 component.queryItems = queryItems
                 
-                if let urlToReturn = component.url {
-                    internalUrl = urlToReturn
-                }
-                return internalUrl
+                return component.url
             }
         }
         return nil

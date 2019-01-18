@@ -106,7 +106,7 @@ class URLParameterTests: XCTestCase {
 
         let expectedValue = "http://example.com?token=usertoken"
 
-        guard let queryParamUrl = url.changeQueryParamValue(withName: "token", toValue: "usertoken") else {
+        guard let queryParamUrl = url.changeQueryParamValue(withName: "token", to: "usertoken") else {
             XCTFail("could not change queryParamUrl")
             return
         }
@@ -125,7 +125,7 @@ class URLParameterTests: XCTestCase {
         }
 
         //Trying with a queryparam that's not in the url - expecting nil
-        XCTAssertNil(url.changeQueryParamValue(withName: "username", toValue: "usertoken"))
+        XCTAssertNil(url.changeQueryParamValue(withName: "username", to: "usertoken"))
 
     }
     
