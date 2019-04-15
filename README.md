@@ -14,8 +14,8 @@ Codemine is a collection of extensions containing useful functions and syntactic
 ## Table of contents
 **Using Codemine as a library**
 
-- [Requirements](#*-requirements)  
-- [Installation](#*-installation)  
+- [Requirements](#requirements)  
+- [Installation](#installation)  
 
 **Browsing the individual code snippets and usages.**
 
@@ -37,13 +37,13 @@ Codemine is a collection of extensions containing useful functions and syntactic
 - [Credits](#credits)
 - [License](#license)
 
-## 📝 Requirements
+## Requirements
 
 * iOS 8.0+
 * Swift 3.0+
 
 
-## 📦 Installation
+## Installation
 
 ### CocoaPods
 
@@ -1010,7 +1010,7 @@ public extension URLSession {
 }
 ```
 [See in Codemine](https://github.com/nodes-ios/Codemine/blob/master/Codemine/Extensions/URLSession%2BCodable.swift)
-## 👥 Credits
+## Credits
 Made with ❤️ at [Nodes](http://nodesagency.com).
 
 `Application` and `Then` were borrowed from Hyper's [Sugar](https://github.com/hyperoslo/Sugar) 🙈.
@@ -1018,5 +1018,5 @@ Made with ❤️ at [Nodes](http://nodesagency.com).
 The `DispatchTime` extensions are [Russ Bishop's idea](http://www.russbishop.net/quick-easy-dispatchtime) 🙈.
 
 
-## 📄 License
+## License
 **Codemine** is available under the MIT license. See the [LICENSE](https://github.com/nodes-ios/Codemine/blob/master/LICENSE) file for more info.
