@@ -14,8 +14,8 @@ Codemine is a collection of extensions containing useful functions and syntactic
 ## Table of contents
 **Using Codemine as a library**
 
-- [Requirements](#*-requirements)  
-- [Installation](#*-installation)  
+- [Requirements](#📝-requirements)  
+- [Installation](#📦-installation)  
 
 **Browsing the individual code snippets and usages.**
 
