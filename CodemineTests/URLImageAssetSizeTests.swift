@@ -22,22 +22,29 @@ class URLImageAssetSizeTests: XCTestCase {
 		let size = CGSize(width: 512, height: 256)
 		let heightParameterName = "height"
 		let widthParameterName = "width"
+        
+        #if os(iOS) || os(tvOS)
+        let screenScale = UIScreen.main.scale
+        #else
+        let screenScale = NSScreen.main?.backingScaleFactor ?? 1.0
+        #endif
+
 		
 		let url2 = url.appendingAssetSize(size, mode: .default, heightParameterName: heightParameterName, widthParameterName: widthParameterName)
-		XCTAssertEqual(url2?.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * UIScreen.main.scale ))&\(heightParameterName)=\(Int(size.height *  UIScreen.main.scale))")
+		XCTAssertEqual(url2?.absoluteString, url.absoluteString + "?\(widthParameterName)=\(Int(size.width * screenScale ))&\(heightParameterName)=\(Int(size.height *  screenScale))")
 		
 		let url3 = url.appendingAssetSize(size)
-		XCTAssertEqual(url3?.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))")
+		XCTAssertEqual(url3?.absoluteString, url.absoluteString + "?w=\(Int(size.width * screenScale ))&h=\(Int(size.height *  screenScale))")
 		
 		let url4 = url.appendingAssetSize(size, mode: .crop)
-		XCTAssertEqual(url4?.absoluteString, url.absoluteString + "?w=\(Int(size.width * UIScreen.main.scale ))&h=\(Int(size.height *  UIScreen.main.scale))&mode=crop")
+		XCTAssertEqual(url4?.absoluteString, url.absoluteString + "?w=\(Int(size.width * screenScale ))&h=\(Int(size.height *  screenScale))&mode=crop")
 		
 	}
 	
 	func testBadUrl() {
 		let url = URL(string: "http://example.com:-80/")!
 		
-		print(URLComponents(url: url, resolvingAgainstBaseURL: false))
+        print(URLComponents(url: url, resolvingAgainstBaseURL: false) ?? "bad value")
 		
 		let newUrl = url.appendingAssetSize(CGSize(width: 10, height: 10))
 		XCTAssertNil(newUrl?.absoluteString, "Bad URL did not return nil")

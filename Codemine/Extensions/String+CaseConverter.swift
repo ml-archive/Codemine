@@ -15,10 +15,10 @@ public extension String {
      
      - returns: the snake_case String
      */
-    public func camelCaseToUnderscore() -> String {
+    func camelCaseToUnderscore() -> String {
         var returnString = self
         
-        let characterArray = Array(returnString.characters).map { (character) -> String in
+        let characterArray = Array(returnString).map { (character) -> String in
             let inputCharacterString = String(character)
             let lowerCaseCharacterString = String(character).lowercased()
             

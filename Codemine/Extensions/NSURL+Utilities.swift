@@ -8,7 +8,11 @@
 
 import Foundation
 import CoreGraphics
+#if os(iOS) || os(tvOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 public extension URL {
     /**
@@ -23,7 +27,7 @@ public extension URL {
      while the other dimension is altered to maintain the same aspect ratio of the input image.
      - Standard: Default/normal image mode. No changes to the ratio.
      */
-    public enum ImageUrlMode : String {
+    enum ImageUrlMode : String {
 		case resize		= "resize"
 		case crop		= "crop"
 		case fit		= "fit"
@@ -41,12 +45,18 @@ public extension URL {
         - widthParameterName: the name of the width paramter. Default is 'h'
      - returns: `URL` as a `NSURL`.
      */
-    public func appendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
+    func appendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
         guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
         
+        #if os(iOS) || os(tvOS)
+        let screenScale = UIScreen.main.scale
+        #else
+        let screenScale = NSScreen.main?.backingScaleFactor ?? 1.0
+        #endif
+        
         var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
-        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main.scale ))"))
-        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main.scale ))"))
+        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * screenScale ))"))
+        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * screenScale ))"))
         if mode != .default {
             queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }
@@ -60,7 +70,7 @@ public extension URL {
         - name: the URL parameter to look for
      - returns: the first value found for `name` or nil if no value was found
      */
-    public func value(forParameter name: String) -> String? {
+    func value(forParameter name: String) -> String? {
         guard let urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true),
             let queryItems = urlComponents.queryItems else {
                 return nil
@@ -75,7 +85,7 @@ public extension URL {
         - queryParameters: a `String` : `String` dictionary containing the queryParameters to append
      - returns: a new `URL` instance with the appended queryParameters or nil if the appending failed
      */
-    public func append(queryParameters: [String: String]) -> URL? {
+    func append(queryParameters: [String: String]) -> URL? {
         guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
             return nil
         }
@@ -86,4 +96,29 @@ public extension URL {
         urlComponents.queryItems = urlQueryItems
         return urlComponents.url
     }
+    
+    /// Changes a value for a queryParameter in a given URL
+    ///
+    /// - Parameters:
+    ///   - url: The `URL` that you want to change a queryParemeter in
+    ///   - withName: The `String` representation of the name of the queryParameter you want to change the value of
+    ///   - toValue: The `String` representation of the new value for the queryParameter
+    /// - Returns: A new `URL` instance with a changed queryParameter value, for the first param that matches the input, or nil if the change failed
+    func changeQueryParamValue(withName param: String, to newValue: String) -> URL? {
+
+        if self.value(forParameter: param) != nil {
+            if
+                var component = URLComponents(url: self, resolvingAgainstBaseURL: false),
+                var queryItems = component.queryItems,
+                let index = queryItems.firstIndex(where: {$0.name == param})
+            {
+                queryItems[index].value = newValue
+                component.queryItems = queryItems
+                
+                return component.url
+            }
+        }
+        return nil
+    }
+    
 }

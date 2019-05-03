@@ -25,7 +25,7 @@ public extension URLSession {
      
      - returns: The Decoded Result (DResult)
      */
-    public func decode<Value: Swift.Decodable>(requestCompletion: (Data?, Error?)) -> DResult<Value> {
+    func decode<Value: Swift.Decodable>(requestCompletion: (Data?, Error?)) -> DResult<Value> {
         switch requestCompletion {
         case (.some(let data), .some(let error)):
             do {
@@ -57,7 +57,7 @@ public extension URLSession {
      
      - returns: The URLSession.dataTask completion
      */
-    public func decode<Value: Swift.Decodable>(_ completion: @escaping ((DResult<Value>) -> Void)) -> ((Data?, URLResponse?, Error?) -> Void) {
+    func decode<Value: Swift.Decodable>(_ completion: @escaping ((DResult<Value>) -> Void)) -> ((Data?, URLResponse?, Error?) -> Void) {
         return { (data, _, error) in
             DispatchQueue.main.async {
                 completion(self.decode(requestCompletion: (data, error)))

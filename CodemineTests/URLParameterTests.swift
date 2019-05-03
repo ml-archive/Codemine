@@ -98,4 +98,35 @@ class URLParameterTests: XCTestCase {
 
     }
     
+    func testCanChangeQueryParameters() {
+        guard let url = URL(string: "http://example.com?token=addtokenhere") else {
+            XCTFail("could not create URL")
+            return
+        }
+
+        let expectedValue = "http://example.com?token=usertoken"
+
+        guard let queryParamUrl = url.changeQueryParamValue(withName: "token", to: "usertoken") else {
+            XCTFail("could not change queryParamUrl")
+            return
+        }
+
+        //Is the param even there?
+        XCTAssertNotNil(queryParamUrl.value(forParameter: "token"))
+
+        //It is, but does it match?
+        XCTAssertTrue(queryParamUrl.absoluteString == expectedValue)
+    }
+    
+    func testChangeQueryParametersWithWrongInput() {
+        guard let url = URL(string: "http://example.com?token=addtokenhere") else {
+            XCTFail("could not create URL")
+            return
+        }
+
+        //Trying with a queryparam that's not in the url - expecting nil
+        XCTAssertNil(url.changeQueryParamValue(withName: "username", to: "usertoken"))
+
+    }
+    
 }

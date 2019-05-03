@@ -11,7 +11,7 @@ import CoreGraphics
 
 public extension CGRect {
     /// Getter & Setter for a `CGRect`'s  `origin.y`
-    public var y: CGFloat {
+    var y: CGFloat {
         set {
             self = CGRect(origin: CGPoint(x: origin.x, y: newValue), size: size)
         }
@@ -21,7 +21,7 @@ public extension CGRect {
     }
     
     /// Getter & Setter for a `CGRect`s `origin.x`
-    public var x: CGFloat {
+    var x: CGFloat {
         set {
             self = CGRect(origin: CGPoint(x: newValue, y: origin.y), size: size)
         }
@@ -35,7 +35,7 @@ public extension CGRect {
      
      - returns: a new CGRect with the width and height reversed to those of the current one
      */
-	public var reversingSize: CGRect {
+	var reversingSize: CGRect {
         return CGRect(origin: origin, size: CGSize(width: height, height: width))
     }
 }
