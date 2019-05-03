@@ -18,7 +18,7 @@ public extension UIColor {
      
      - returns: a UIColor with the specified hex value
      */
-    public convenience init(rgb: UInt) {
+    convenience init(rgb: UInt) {
         self.init(
             red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,

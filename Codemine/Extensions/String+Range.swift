@@ -25,7 +25,7 @@ public extension String {
         return true
     }
     
-    public enum RangeSearchType: Int {
+    enum RangeSearchType: Int {
         case leftToRight
         case rightToLeft
         case broadest
@@ -42,7 +42,7 @@ public extension String {
      
      - returns: the range between the start of the first substring and the end of the last substring
      */
-    public func range(from fromString: String, toString: String, searchType: RangeSearchType = .leftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
+    func range(from fromString: String, toString: String, searchType: RangeSearchType = .leftToRight,  inRange: Range<Index>? = nil) -> Range<Index>? {
         let range = inRange ?? Range(uncheckedBounds: (lower: self.startIndex, upper: self.endIndex))
         if !contains(range) { return nil }
         

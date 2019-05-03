@@ -17,7 +17,7 @@ public extension UIView {
      - Parameter name: The name that the UIView will get as its `name` assigned as a `String`.
      - Returns: `Generics type`.
      */
-    public static func from<T>(nibWithName:String) -> T? {
+    static func from<T>(nibWithName:String) -> T? {
         let view = UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
         return view
     }
@@ -29,7 +29,7 @@ public extension UIView {
         - corners: Defines which corners should be rounded.
         - radius: Defines the radius of the round corners as a `CGFloat`.
      */
-    public func roundViewCorners(_ corners:UIRectCorner, radius: CGFloat) {
+    func roundViewCorners(_ corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath

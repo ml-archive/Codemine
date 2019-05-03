@@ -63,7 +63,7 @@ public extension UIImage {
         - image: The background image.
      - Returns: The combined image as `UIImage`.
      */
-    public class func embed(icon: UIImage, inImage image: UIImage ) -> UIImage? {
+    class func embed(icon: UIImage, inImage image: UIImage ) -> UIImage? {
         let newSize = CGSize(width: image.size.width, height: image.size.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
@@ -82,7 +82,7 @@ public extension UIImage {
      
      - Returns: The orientation corrected image as an `UIImage`.
      */
-	public var rotationCorrected: UIImage? {
+	var rotationCorrected: UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         self.draw(in: CGRect(origin: CGPoint.zero, size: self.size))
