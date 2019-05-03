@@ -8,7 +8,11 @@
 
 import Foundation
 import CoreGraphics
+#if os(iOS) || os(tvOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 public extension URL {
     /**
@@ -44,9 +48,15 @@ public extension URL {
     public func appendingAssetSize(_ size: CGSize, mode: ImageUrlMode = .default, heightParameterName : String = "h", widthParameterName : String = "w") -> URL? {
         guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return nil }
         
+        #if os(iOS) || os(tvOS)
+        let screenScale = UIScreen.main.scale
+        #else
+        let screenScale = NSScreen.main?.backingScaleFactor ?? 1.0
+        #endif
+        
         var queryItems:[URLQueryItem] = urlComponents.queryItems ?? []
-        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * UIScreen.main.scale ))"))
-        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * UIScreen.main.scale ))"))
+        queryItems.append(URLQueryItem(name: widthParameterName, value: "\(Int(size.width * screenScale ))"))
+        queryItems.append(URLQueryItem(name: heightParameterName, value: "\(Int(size.height * screenScale ))"))
         if mode != .default {
             queryItems.append(URLQueryItem(name: "mode", value: mode.rawValue))
         }
