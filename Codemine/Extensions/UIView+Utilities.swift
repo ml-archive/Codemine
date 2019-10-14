@@ -35,6 +35,22 @@ public extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
     }
+    
+    /**
+     Utility function to add shadow for `UIView`.
+     
+     - Parameters:
+     - offset: Defines the shadow offset, using CGSize
+     - radius: Defines the radius of shadow in CGFloat
+     - opacity: Defines the opacity of the shadow in Float ranging from 0 to 1
+     - color: Defines the color of the shadow, defaults to black
+     */
+    func addShadow(offset: CGSize, radius: CGFloat, opacity: Float, color: UIColor = UIColor.black) {
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+    }
 }
 
 
