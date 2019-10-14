@@ -35,6 +35,20 @@ public extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
     }
+    
+    /**
+     
+     More idiomatic style for isHidden
+     
+    **/
+    
+    func hide() {
+        isHidden = true
+    }
+    
+    func reveal() {
+        isHidden = false
+    }
 }
 
 
