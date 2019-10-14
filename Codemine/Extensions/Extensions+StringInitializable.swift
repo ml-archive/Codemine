@@ -12,13 +12,13 @@ import Foundation
 // MARK: String Initializable
 
 public protocol StringInitializable {
-    static func fromString<T>(_ string: String) -> T?
+    static func fromString(_ string: String) -> Self?
     func stringRepresentation() -> String
 }
 
 extension URL: StringInitializable {
-    public static func fromString<T>(_ string: String) -> T? {
-        return self.init(string: string) as? T
+    public static func fromString(_ string: String) -> URL? {
+        return self.init(string: string)
     }
     
     public func stringRepresentation() -> String {
@@ -31,14 +31,13 @@ extension Date: StringInitializable {
     static fileprivate let allowedDateFormats = ["yyyy-MM-dd'T'HH:mm:ssZZZZZ", "yyyy-MM-dd'T'HH:mm:ss", "yyyy-MM-dd"]
     static public var customDateFormats: [String] = []
     
-    public static func fromString<T>(_ string: String) -> T? {
+    public static func fromString(_ string: String) -> Date? {
         for format in allowedDateFormats + customDateFormats {
             internalDateFormatter.dateFormat = format
-            if let date = internalDateFormatter.date(from: string) as? T {
+            if let date = internalDateFormatter.date(from: string) {
                 return date
             }
         }
-        
         return nil
     }
     
