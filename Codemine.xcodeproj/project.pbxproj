@@ -90,6 +90,7 @@
 		8C1D2FCE227C79BE00B9C72C /* NSURL+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272C81C75EE9A00FB1BBD /* NSURL+Utilities.swift */; };
 		8C9AAA2F1F4ED1F000F9E7C9 /* URLParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AAA2E1F4ED1F000F9E7C9 /* URLParameterTests.swift */; };
 		9F4A1BBE1F97AF0F00154997 /* XCTestCase+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A1BBD1F97AF0F00154997 /* XCTestCase+Utilities.swift */; };
+		C72B9A9F235B960E0091E044 /* UIView+CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B9A9E235B960E0091E044 /* UIView+CircularProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		83A5BEC81D98249500C74312 /* URLImageAssetSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImageAssetSizeTests.swift; sourceTree = "<group>"; };
 		8C9AAA2E1F4ED1F000F9E7C9 /* URLParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterTests.swift; sourceTree = "<group>"; };
 		9F4A1BBD1F97AF0F00154997 /* XCTestCase+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Utilities.swift"; sourceTree = "<group>"; };
+		C72B9A9E235B960E0091E044 /* UIView+CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CircularProgressBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				42FB12122063D04900F850D1 /* URLSession+Codable.swift */,
 				42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */,
 				42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */,
+				C72B9A9E235B960E0091E044 /* UIView+CircularProgressBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				838A0F971F03F57E00469143 /* String+HTML.swift in Sources */,
 				291272C31C75EDE300FB1BBD /* CGRect+Utilities.swift in Sources */,
 				291272CB1C75EEB500FB1BBD /* UIImage+Utilities.swift in Sources */,
+				C72B9A9F235B960E0091E044 /* UIView+CircularProgressBar.swift in Sources */,
 				291272CF1C75F32200FB1BBD /* Operators.swift in Sources */,
 				291272BD1C75EC3900FB1BBD /* String+EmailValidation.swift in Sources */,
 				291272B91C75EC1F00FB1BBD /* String+CaseConverter.swift in Sources */,
