@@ -17,7 +17,7 @@ public extension UIView {
      - Parameter name: The name that the UIView will get as its `name` assigned as a `String`.
      - Returns: `Generics type`.
      */
-    public static func from<T>(nibWithName:String) -> T? {
+    static func from<T>(nibWithName:String) -> T? {
         let view = UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
         return view
     }
@@ -29,12 +29,39 @@ public extension UIView {
      - corners: Defines which corners should be rounded.
      - radius: Defines the radius of the round corners as a `CGFloat`.
      */
-    public func roundViewCorners(_ corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
+    func roundCorners(_ corners: CACornerMask, radius: CGFloat) {
+        if #available(iOS 11, *) {
+            clipsToBounds = true
+            layer.cornerRadius = radius
+            layer.maskedCorners = corners
+        } else {
+            let cornerRadii = CGSize(width: radius, height: radius)
+            let path = UIBezierPath(
+                roundedRect: bounds,
+                byRoundingCorners: corners.uiRectCorner,
+                cornerRadii: cornerRadii
+            )
+            
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            layer.mask = mask
+        }
     }
 }
 
-
+private extension CACornerMask {
+    
+    var uiRectCorner: UIRectCorner {
+        var cornerMask = UIRectCorner()
+        
+        if(contains(.layerMinXMinYCorner)){ cornerMask.insert(.topLeft) }
+        
+        if(contains(.layerMaxXMinYCorner)){ cornerMask.insert(.topRight) }
+        
+        if(contains(.layerMinXMaxYCorner)){ cornerMask.insert(.bottomLeft) }
+        
+        if(contains(.layerMaxXMaxYCorner)){ cornerMask.insert(.bottomRight) }
+        
+        return cornerMask
+    }
+}
