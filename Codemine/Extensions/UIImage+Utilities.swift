@@ -18,9 +18,9 @@ public extension UIImage {
      parameter `cornerRadius` for setting up the rounded corners.
      
      - Parameters:
-     - color: The background color.
-     - size: The size of the image.
-     - cornerRadius: The corner radius.
+        - color: The background color.
+        - size: The size of the image.
+        - cornerRadius: The corner radius.
      
      - Returns: A 'UIImage' with the specified color, size and corner radius.
      */
@@ -59,11 +59,11 @@ public extension UIImage {
      The `UIImage` that is set with the parameter `icon` will be centered on `image`.
      
      - Parameters:
-	 - icon: The embedded image that will be on top.
-     - image: The background image.
+        - icon: The embedded image that will be on top.
+        - image: The background image.
      - Returns: The combined image as `UIImage`.
      */
-    public class func embed(icon: UIImage, inImage image: UIImage ) -> UIImage? {
+    class func embed(icon: UIImage, inImage image: UIImage ) -> UIImage? {
         let newSize = CGSize(width: image.size.width, height: image.size.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         
@@ -82,7 +82,7 @@ public extension UIImage {
      
      - Returns: The orientation corrected image as an `UIImage`.
      */
-	public var rotationCorrected: UIImage? {
+	var rotationCorrected: UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         self.draw(in: CGRect(origin: CGPoint.zero, size: self.size))

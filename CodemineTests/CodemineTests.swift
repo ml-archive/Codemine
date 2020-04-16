@@ -52,7 +52,7 @@ class CodemineTests: XCTestCase {
     func testRange() {
         let str = "Hello world!"
 		let range = str.range(from: "e", toString: " w")
-        XCTAssertTrue(range?.lowerBound == str.characters.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.characters.index(str.startIndex, offsetBy: 7), "range = \(range)")
+        XCTAssertTrue(range?.lowerBound == str.index(str.startIndex, offsetBy: 1) && range?.upperBound == str.index(str.startIndex, offsetBy: 7), "range = \(String(describing: range))")
         XCTAssertNil(str.range(from: "a", toString: "e"))
         XCTAssertNil(str.range(from: "e", toString: "b"))
 		
@@ -197,5 +197,20 @@ class CodemineTests: XCTestCase {
         let error = NSError(domain: domain, code: code, description: description)
         let error2 = NSError(domain: domain, code: code, userInfo: [NSLocalizedDescriptionKey : description])
         XCTAssertEqual(error, error2)
+    }
+
+    // MARK: - XCTestCase extension test
+    func testThrowsSpecificError() {
+        //Sample types
+        enum MyError: Error {
+            case specificError
+        }
+
+        func throwIt() throws {
+            throw MyError.specificError
+        }
+
+        //Actually test
+        XCTAssertThrows(try throwIt(), specificError: MyError.specificError)
     }
 }

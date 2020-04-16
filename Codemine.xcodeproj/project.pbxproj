@@ -63,9 +63,20 @@
 		293490EE1C6CAFD500E8305E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490ED1C6CAFD500E8305E /* Application.swift */; };
 		293490F01C6CAFF200E8305E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293490EF1C6CAFF200E8305E /* Then.swift */; };
 		296831491DD5EC670002FE5A /* DispatchTime+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296831481DD5EC670002FE5A /* DispatchTime+Utilities.swift */; };
+		42DDB213206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */; };
+		42DDB214206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */; };
+		42DDB215206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */; };
+		42DDB216206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */; };
+		42DDB218206A66A100A58997 /* Extention+HexInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */; };
+		42DDB219206A66A100A58997 /* Extention+HexInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */; };
+		42DDB21A206A66A100A58997 /* Extention+HexInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */; };
+		42DDB21B206A66A100A58997 /* Extention+HexInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */; };
+		42FB12132063D04900F850D1 /* URLSession+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB12122063D04900F850D1 /* URLSession+Codable.swift */; };
+		42FB12142063D04900F850D1 /* URLSession+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB12122063D04900F850D1 /* URLSession+Codable.swift */; };
+		42FB12152063D04900F850D1 /* URLSession+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB12122063D04900F850D1 /* URLSession+Codable.swift */; };
+		42FB12162063D04900F850D1 /* URLSession+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB12122063D04900F850D1 /* URLSession+Codable.swift */; };
 		838A0F971F03F57E00469143 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838A0F961F03F57E00469143 /* String+HTML.swift */; };
 		83A5BEBC1D981F3500C74312 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEBB1D981F3500C74312 /* UIImageTests.swift */; };
-		83A5BEBD1D98215F00C74312 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEBB1D981F3500C74312 /* UIImageTests.swift */; };
 		83A5BEBE1D98216000C74312 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEBB1D981F3500C74312 /* UIImageTests.swift */; };
 		83A5BEC01D98226800C74312 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A5BEBF1D98226800C74312 /* add.png */; };
 		83A5BEC11D98226800C74312 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A5BEBF1D98226800C74312 /* add.png */; };
@@ -76,7 +87,9 @@
 		83A5BEC91D98249500C74312 /* URLImageAssetSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEC81D98249500C74312 /* URLImageAssetSizeTests.swift */; };
 		83A5BECA1D98249500C74312 /* URLImageAssetSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEC81D98249500C74312 /* URLImageAssetSizeTests.swift */; };
 		83A5BECB1D98249500C74312 /* URLImageAssetSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A5BEC81D98249500C74312 /* URLImageAssetSizeTests.swift */; };
+		8C1D2FCE227C79BE00B9C72C /* NSURL+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291272C81C75EE9A00FB1BBD /* NSURL+Utilities.swift */; };
 		8C9AAA2F1F4ED1F000F9E7C9 /* URLParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AAA2E1F4ED1F000F9E7C9 /* URLParameterTests.swift */; };
+		9F4A1BBE1F97AF0F00154997 /* XCTestCase+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A1BBD1F97AF0F00154997 /* XCTestCase+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,12 +143,16 @@
 		293490ED1C6CAFD500E8305E /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		293490EF1C6CAFF200E8305E /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		296831481DD5EC670002FE5A /* DispatchTime+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchTime+Utilities.swift"; sourceTree = "<group>"; };
+		42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+StringInitializable.swift"; sourceTree = "<group>"; };
+		42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+HexInitializable.swift"; sourceTree = "<group>"; };
+		42FB12122063D04900F850D1 /* URLSession+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Codable.swift"; sourceTree = "<group>"; };
 		838A0F961F03F57E00469143 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		83A5BEBB1D981F3500C74312 /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 		83A5BEBF1D98226800C74312 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		83A5BEC31D98228300C74312 /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
 		83A5BEC81D98249500C74312 /* URLImageAssetSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImageAssetSizeTests.swift; sourceTree = "<group>"; };
 		8C9AAA2E1F4ED1F000F9E7C9 /* URLParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterTests.swift; sourceTree = "<group>"; };
+		9F4A1BBD1F97AF0F00154997 /* XCTestCase+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +249,7 @@
 		275BCAAD1C57D1B500FF3647 /* CodemineTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F4A1BBC1F97AEE700154997 /* Extensions */,
 				83A5BEC71D98228F00C74312 /* Resources */,
 				275BCAB01C57D1B500FF3647 /* Info.plist */,
 				275BCAAE1C57D1B500FF3647 /* CodemineTests.swift */,
@@ -258,6 +276,9 @@
 				291272CC1C75EECB00FB1BBD /* UIView+Utilities.swift */,
 				296831481DD5EC670002FE5A /* DispatchTime+Utilities.swift */,
 				838A0F961F03F57E00469143 /* String+HTML.swift */,
+				42FB12122063D04900F850D1 /* URLSession+Codable.swift */,
+				42DDB212206A61A700A58997 /* Extensions+StringInitializable.swift */,
+				42DDB217206A66A100A58997 /* Extention+HexInitializable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +299,14 @@
 				83A5BEC31D98228300C74312 /* alert.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		9F4A1BBC1F97AEE700154997 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A1BBD1F97AF0F00154997 /* XCTestCase+Utilities.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,7 +480,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Nodes;
 				TargetAttributes = {
 					01CD40211D071BAE0044887E = {
@@ -471,11 +500,11 @@
 					};
 					275BCA9E1C57D1B500FF3647 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 					275BCAA81C57D1B500FF3647 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -484,6 +513,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 275BCA951C57D1B400FF3647;
@@ -566,11 +596,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD40881D071BDC0044887E /* CGRect+Utilities.swift in Sources */,
+				42DDB214206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */,
 				01CD40891D071BDC0044887E /* CGPoint+Utilities.swift in Sources */,
 				01CD40631D071BCB0044887E /* Then.swift in Sources */,
+				42DDB219206A66A100A58997 /* Extention+HexInitializable.swift in Sources */,
 				01CD40851D071BDC0044887E /* String+CaseConverter.swift in Sources */,
 				01CD408A1D071BDC0044887E /* NSError+Utilities.swift in Sources */,
+				42FB12142063D04900F850D1 /* URLSession+Codable.swift in Sources */,
 				01CD40651D071BCB0044887E /* Operators.swift in Sources */,
+				8C1D2FCE227C79BE00B9C72C /* NSURL+Utilities.swift in Sources */,
 				01CD40871D071BDC0044887E /* String+EmailValidation.swift in Sources */,
 				01CD40621D071BCB0044887E /* Application.swift in Sources */,
 				01CD40861D071BDC0044887E /* String+Range.swift in Sources */,
@@ -581,7 +615,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83A5BEBD1D98215F00C74312 /* UIImageTests.swift in Sources */,
 				83A5BECA1D98249500C74312 /* URLImageAssetSizeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +627,7 @@
 				01CD407F1D071BDC0044887E /* CGPoint+Utilities.swift in Sources */,
 				01CD40831D071BDC0044887E /* UIImage+Utilities.swift in Sources */,
 				01CD40821D071BDC0044887E /* NSURL+Utilities.swift in Sources */,
+				42DDB21A206A66A100A58997 /* Extention+HexInitializable.swift in Sources */,
 				01CD40671D071BCC0044887E /* Then.swift in Sources */,
 				01CD407B1D071BDC0044887E /* String+CaseConverter.swift in Sources */,
 				01CD40801D071BDC0044887E /* NSError+Utilities.swift in Sources */,
@@ -603,6 +637,8 @@
 				01CD407D1D071BDC0044887E /* String+EmailValidation.swift in Sources */,
 				01CD40661D071BCC0044887E /* Application.swift in Sources */,
 				01CD407C1D071BDC0044887E /* String+Range.swift in Sources */,
+				42DDB215206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */,
+				42FB12152063D04900F850D1 /* URLSession+Codable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +658,10 @@
 				01CD40741D071BDB0044887E /* CGRect+Utilities.swift in Sources */,
 				01CD40751D071BDB0044887E /* CGPoint+Utilities.swift in Sources */,
 				01CD40791D071BDB0044887E /* UIImage+Utilities.swift in Sources */,
+				42FB12162063D04900F850D1 /* URLSession+Codable.swift in Sources */,
+				42DDB216206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */,
 				01CD406B1D071BCC0044887E /* Then.swift in Sources */,
+				42DDB21B206A66A100A58997 /* Extention+HexInitializable.swift in Sources */,
 				01CD40711D071BDB0044887E /* String+CaseConverter.swift in Sources */,
 				01CD40761D071BDB0044887E /* NSError+Utilities.swift in Sources */,
 				01CD40771D071BDB0044887E /* UIColor+Hex.swift in Sources */,
@@ -643,6 +682,7 @@
 				291272BB1C75EC2C00FB1BBD /* String+Range.swift in Sources */,
 				291272C91C75EE9A00FB1BBD /* NSURL+Utilities.swift in Sources */,
 				296831491DD5EC670002FE5A /* DispatchTime+Utilities.swift in Sources */,
+				42DDB213206A61A700A58997 /* Extensions+StringInitializable.swift in Sources */,
 				838A0F971F03F57E00469143 /* String+HTML.swift in Sources */,
 				291272C31C75EDE300FB1BBD /* CGRect+Utilities.swift in Sources */,
 				291272CB1C75EEB500FB1BBD /* UIImage+Utilities.swift in Sources */,
@@ -652,6 +692,8 @@
 				293490F01C6CAFF200E8305E /* Then.swift in Sources */,
 				0132B4CF1C70E616007BC588 /* NSError+Utilities.swift in Sources */,
 				291272C11C75ED3900FB1BBD /* UIColor+Hex.swift in Sources */,
+				42DDB218206A66A100A58997 /* Extention+HexInitializable.swift in Sources */,
+				42FB12132063D04900F850D1 /* URLSession+Codable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +703,7 @@
 			files = (
 				291D23001E0425BF003E1210 /* DispatchTimeTests.swift in Sources */,
 				83A5BEC91D98249500C74312 /* URLImageAssetSizeTests.swift in Sources */,
+				9F4A1BBE1F97AF0F00154997 /* XCTestCase+Utilities.swift in Sources */,
 				8C9AAA2F1F4ED1F000F9E7C9 /* URLParameterTests.swift in Sources */,
 				275BCAAF1C57D1B500FF3647 /* CodemineTests.swift in Sources */,
 				83A5BEBC1D981F3500C74312 /* UIImageTests.swift in Sources */,
@@ -707,7 +750,7 @@
 				PRODUCT_NAME = Codemine;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -731,7 +774,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -747,6 +790,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.Codemine-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -762,6 +806,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.Codemine-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -769,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -780,7 +826,7 @@
 				PRODUCT_NAME = Codemine;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -790,6 +836,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -802,7 +849,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -817,6 +864,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.Codemine-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
@@ -830,6 +878,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nodes.Codemine-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
@@ -839,6 +888,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -850,7 +900,7 @@
 				PRODUCT_NAME = Codemine;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -861,6 +911,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -873,7 +924,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -883,18 +934,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -934,18 +994,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -967,6 +1036,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -979,6 +1049,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -990,7 +1061,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -999,6 +1071,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1010,7 +1083,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1021,7 +1095,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.CodemineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1033,7 +1108,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.CodemineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

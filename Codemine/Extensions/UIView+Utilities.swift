@@ -17,19 +17,19 @@ public extension UIView {
      - Parameter name: The name that the UIView will get as its `name` assigned as a `String`.
      - Returns: `Generics type`.
      */
-    public static func from<T>(nibWithName:String) -> T? {
+    static func from<T>(nibWithName:String) -> T? {
         let view = UINib(nibName: nibWithName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
         return view
     }
     
-    /**
+/**
      Rounded corners for a `UIView`.
      
      - Parameters:
-     - corners: Defines which corners should be rounded.
-     - radius: Defines the radius of the round corners as a `CGFloat`.
+        - corners: Defines which corners should be rounded.
+        - radius: Defines the radius of the round corners as a `CGFloat`.
      */
-    public func roundViewCorners(_ corners: UIRectCorner, radius: CGFloat) {
+    func roundViewCorners(_ corners: UIRectCorner, radius: CGFloat) {
         if #available(iOS 11.0, *) {
             self.layer.cornerRadius = radius
             self.layer.maskedCorners = getMaskedCorners(from: corners)
