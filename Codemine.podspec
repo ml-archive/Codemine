@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Codemine"
-  s.version      = "1.0.1"
+  s.version      = "1.1.1"
   s.summary      = "A gold mine of code, filled with neat utility functions."
 
   # This description is used to generate tags and improve search results.
@@ -62,14 +62,11 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
   #  When using multiple platforms
-  s.ios.deployment_target = "8.1"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
+  s.watchos.deployment_target = "2.0"
+  s.tvos.deployment_target = "13.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -78,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/nodes-ios/Codemine.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/nodes-ios/Codemine.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +87,23 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Codemine/**/*.swift"
-  # s.exclude_files = "Classes/Exclude"
+  s.osx.exclude_files = [
+    'Codemine/Extensions/UIColor+Hex.swift',
+    'Codemine/Extensions/UIImage+Utilities.swift',
+    'Codemine/Extensions/UIView+Utilities.swift',
+    'Codemine/Extensions/DispatchTime+Utilities.swift',
+    'Codemine/Extensions/String+HTML.swift',
+  ]
+  s.watchos.exclude_files = [
+    'Codemine/Extensions/NSURL+Utilities.swift',
+    'Codemine/Extensions/UIView+Utilities.swift',
+    'Codemine/Extensions/DispatchTime+Utilities.swift',
+    'Codemine/Extensions/String+HTML.swift',
+  ]
+  s.tvos.exclude_files = [
+    'Codemine/Extensions/DispatchTime+Utilities.swift',
+    'Codemine/Extensions/String+HTML.swift',
+  ]
 
   # s.public_header_files = "Codemine/Supporting Files/Codemine.h"
 
