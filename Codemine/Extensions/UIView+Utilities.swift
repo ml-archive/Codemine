@@ -22,18 +22,46 @@ public extension UIView {
         return view
     }
     
-    /**
+/**
      Rounded corners for a `UIView`.
      
      - Parameters:
         - corners: Defines which corners should be rounded.
         - radius: Defines the radius of the round corners as a `CGFloat`.
      */
-    func roundViewCorners(_ corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
+    func roundViewCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        if #available(iOS 11.0, *) {
+            self.layer.cornerRadius = radius
+            self.layer.maskedCorners = getMaskedCorners(from: corners)
+        } else {
+            // Fallback on earlier versions
+            let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            self.layer.mask = mask
+        }
+        self.layoutIfNeeded()
+    }
+    
+    //Helper to get CACornerMask from UIRectCorner
+    private func getMaskedCorners(from corners: UIRectCorner) -> CACornerMask {
+        var maskedCorners: CACornerMask = []
+        if corners.contains(.bottomLeft) {
+            maskedCorners = maskedCorners.union(.layerMinXMaxYCorner)
+        }
+        if corners.contains(.bottomRight) {
+            maskedCorners = maskedCorners.union(.layerMaxXMaxYCorner)
+        }
+        if corners.contains(.topLeft) {
+            maskedCorners = maskedCorners.union(.layerMinXMinYCorner)
+        }
+        if corners.contains(.topRight) {
+            maskedCorners = maskedCorners.union(.layerMaxXMinYCorner)
+        }
+        if corners.contains(.allCorners) {
+            maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+        }
+        return maskedCorners
     }
 }
 
